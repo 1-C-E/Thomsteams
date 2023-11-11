@@ -14,4 +14,4 @@ const Container = styled.View``
 const Profile = styled.Text`
   font-size: 34px;
   font-weight: 600;
-`
+`;
