@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, ImageBackground, SafeAreaView, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import Header from "./Header";
 import BottomNav from "./Bottom_menu";
@@ -9,21 +9,26 @@ import Store from "./store";
 
 export default function Main_page({navigation}) {
     return (
-        <SafeAreaView style={{paddingTop: 5}}>
+        <SafeAreaView>
+
             <StatusBar></StatusBar>
-            <Header/>
-            <Input>Введите запрос</Input>
 
-              <Articles_block style = {{justifyContent: 'space-around'}}>
-                <Image source={require('./../assets/article_1.png')}
-                       style={{width: 81, height: 117}}/>
+            <ImageBackground source={require('./../assets/gradient_2.png')}>
+                <Header/>
+                <Input>Введите запрос</Input>
 
-                <Image source={require('./../assets/article_2.png')}
-                       style={{width: 81, height: 117}}/>
+                <Articles_block style={{justifyContent: 'space-around'}}>
+                    <Image source={require('./../assets/article_1.png')}
+                           style={{width: 81, height: 117}}/>
 
-                <Image source={require('./../assets/article_3.png')}
-                       style={{width: 81, height: 117}}/>
-            </Articles_block>
+                    <Image source={require('./../assets/article_2.png')}
+                           style={{width: 81, height: 117}}/>
+
+                    <Image source={require('./../assets/article_3.png')}
+                           style={{width: 81, height: 117}}/>
+                </Articles_block>
+            </ImageBackground>
+
 
             <FlexBox>
                 <FlexCont>
@@ -74,6 +79,7 @@ export default function Main_page({navigation}) {
 }
 
 const FlexBox = styled.View`
+  margin-top: 20px;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap
@@ -81,16 +87,17 @@ const FlexBox = styled.View`
 
 const Articles_block = styled.View`
   flex-direction: row;
-  margin: 20px 12px 44px 14px;
+  margin: 20px 12px 0 14px;
+  padding-bottom: 25px;
 `;
 
 const Input = styled.Text`
   margin: 44px 20px 0 20px;
   padding: 10px 0 10px 14px;
-  color: black;
+  color: #fff;
   border-width: 1.5px;
   border-radius: 15px;
-  border-color: grey;
+  border-color: #fff;
 `;
 
 const FlexCont = styled.View`
