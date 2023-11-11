@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View, Image, SafeAreaView, FlatList, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import BottomNav from "./Bottom_menu";
 import Store from "./store";
 
 
 
-export default function Main_page() {
+export default function Main_page({navigation}) {
     return (
       
         <SafeAreaView style={{ paddingTop: 5}}>
@@ -46,9 +46,42 @@ export default function Main_page() {
                 <Image source={require('./../assets/article_3.png')}
                        style={{width: 81, height: 117}}/>
             </Container_2>
-            <Store></Store>
-            
-
+          
+            <FlexBox>
+      
+      <FlexCont>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/divan.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+          <Price>14999₽</Price>
+          <Name>Диван кожанный черный</Name>
+        </TouchableOpacity>
+      </FlexCont>
+      
+      <FlexCont>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/stol.jpg')} style={{width: 168, height: 95, borderRadius: 13, justifyContent: "space-around"}}/>
+          <Price>10999₽</Price>
+          <Name>Стол натуральное дерево</Name>
+        </TouchableOpacity>
+      </FlexCont>
+      <Break/>
+      <FlexCont>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/krovat.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+          <Price>55499₽</Price>
+          <Name>Кровать двуспальная дуб</Name>
+        </TouchableOpacity>
+      </FlexCont>
+      
+      <FlexCont>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/kreslo.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+          <Price>19149₽</Price>
+          <Name>Кресло кожанное премиум</Name>
+        </TouchableOpacity>
+      </FlexCont>
+      
+    </FlexBox>    
             <BottomNav> </BottomNav>
           
         </SafeAreaView>
@@ -101,3 +134,42 @@ const Input = styled.Text`
   border-radius: 15px;
   border-color: grey;
 `
+
+const Price = styled.Text`
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 128px;
+  padding-left: 10px;
+`;
+const Name=styled.Text`
+  position: absolute;
+  color: black;
+  font-size: 13px;
+  padding-top: 95px;
+  padding-left: 10px;
+  font-weight: 500;
+`;
+
+
+const FlexBox = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap
+
+`;
+
+const Break = styled.View`
+  flex-basis: 100%;
+  height: 17px;
+`;
+
+const FlexCont = styled.View`
+  width: 170px;
+  height: 150px;
+  border-radius: 14px;
+  border: 1px solid #B6D3FF;
+  background: #FFF;
+  backdrop-filter: blur(12px);
+`;

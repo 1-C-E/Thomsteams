@@ -1,9 +1,10 @@
 import React from "react";
-import Bottom_menu from './componenets/Bottom_menu';
 import Main_page from "./componenets/Main_page";
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
+import Product_page from "./componenets/FullScreenProduct";
+import Store_page from "./componenets/store";
 
 const Stack = createStackNavigator();
 
@@ -13,13 +14,14 @@ export default function Navigate() {
             <Stack.Screen
                 name="Main_page"
                 component={Main_page}
-                options={{title: 'Главная страница'}}/>
+                options={{headerShown: false}}/>
             <Stack.Screen
-                name="Bottom_menu"
-                component={Bottom_menu}
-                options={{title: 'Нижнее меню'}}/>
+                name="Product_page"
+                component={Product_page}
+                options={{title: 'Информация о товаре'}}/>
 
 
         </Stack.Navigator>
     </NavigationContainer>;
+    
 }
