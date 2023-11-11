@@ -36,8 +36,8 @@ const Lower_Nav = styled.View`
 `;
 
 const Bot = styled.View`
-    position: absolute;
-    top: 101%;
+    position: center;
+    top: 1%;
     
 `;
 

@@ -2,32 +2,41 @@ import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import styled from 'styled-components'
 
-export default function Store (){
+
+export default function Store_page ({navigation}){
   return(
     <FlexBox>
       
       <FlexCont>
-        <Image source = {require('./../assets/divan.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
-        <Price>14999₽</Price>
-        <Name>Диван кожанный черный</Name>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/divan.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+          <Price>14999₽</Price>
+          <Name>Диван кожанный черный</Name>
+        </TouchableOpacity>
       </FlexCont>
       
       <FlexCont>
-        <Image source = {require('./../assets/stol.jpg')} style={{width: 168, height: 95, borderRadius: 13, justifyContent: "space-around"}}/>
-        <Price>10999₽</Price>
-        <Name>Стол натуральное дерево</Name>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/stol.jpg')} style={{width: 168, height: 95, borderRadius: 13, justifyContent: "space-around"}}/>
+          <Price>10999₽</Price>
+          <Name>Стол натуральное дерево</Name>
+        </TouchableOpacity>
       </FlexCont>
       <Break/>
       <FlexCont>
-        <Image source = {require('./../assets/krovat.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
-        <Price>55499₽</Price>
-        <Name>Кровать двуспальная дуб</Name>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/krovat.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+          <Price>55499₽</Price>
+          <Name>Кровать двуспальная дуб</Name>
+        </TouchableOpacity>
       </FlexCont>
       
       <FlexCont>
-        <Image source = {require('./../assets/kreslo.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
-        <Price>19149₽</Price>
-        <Name>Кресло кожанное премиум</Name>
+        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+          <Image source = {require('./../assets/kreslo.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+          <Price>19149₽</Price>
+          <Name>Кресло кожанное премиум</Name>
+        </TouchableOpacity>
       </FlexCont>
       
     </FlexBox>    
@@ -38,17 +47,16 @@ const Price = styled.Text`
   color: black;
   font-size: 16px;
   font-weight: bold;
-  padding-top: 128;
-  padding-left: 10;
+  padding-top: 128px;
+  padding-left: 10px;
 `;
 const Name=styled.Text`
   position: absolute;
   color: black;
-  font-size: 14px;
-  padding-top: 95;
-  padding-left: 10;
+  font-size: 13px;
+  padding-top: 95px;
+  padding-left: 10px;
   font-weight: 500;
-
 `;
 
 
