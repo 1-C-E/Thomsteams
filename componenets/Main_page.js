@@ -49,39 +49,38 @@ export default function Main_page({navigation}) {
           
             <FlexBox>
       
-      <FlexCont>
-        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
-          <Image source = {require('./../assets/divan.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
-          <Price>14999₽</Price>
-          <Name>Диван кожанный черный</Name>
-        </TouchableOpacity>
-      </FlexCont>
-      
-      <FlexCont>
-        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
-          <Image source = {require('./../assets/stol.jpg')} style={{width: 168, height: 95, borderRadius: 13, justifyContent: "space-around"}}/>
-          <Price>10999₽</Price>
-          <Name>Стол натуральное дерево</Name>
-        </TouchableOpacity>
-      </FlexCont>
-      <Break/>
-      <FlexCont>
-        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
-          <Image source = {require('./../assets/krovat.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
-          <Price>55499₽</Price>
-          <Name>Кровать двуспальная дуб</Name>
-        </TouchableOpacity>
-      </FlexCont>
-      
-      <FlexCont>
-        <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
-          <Image source = {require('./../assets/kreslo.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
-          <Price>19149₽</Price>
-          <Name>Кресло кожанное премиум</Name>
-        </TouchableOpacity>
-      </FlexCont>
-      
-    </FlexBox>    
+              <FlexCont>
+                <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+                  <Image source = {require('./../assets/divan.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+                  <Price>14999₽</Price>
+                  <Name>Диван кожанный черный</Name>
+                </TouchableOpacity>
+              </FlexCont>
+              
+              <FlexCont>
+                <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+                  <Image source = {require('./../assets/stol.jpg')} style={{width: 168, height: 95, borderRadius: 13, justifyContent: "space-around"}}/>
+                  <Price>10999₽</Price>
+                  <Name>Стол натуральное дерево</Name>
+                </TouchableOpacity>
+              </FlexCont>
+              <Break/>
+              <FlexCont>
+                <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+                  <Image source = {require('./../assets/krovat.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+                  <Price>55499₽</Price>
+                  <Name>Кровать двуспальная дуб</Name>
+                </TouchableOpacity>
+              </FlexCont>
+              
+              <FlexCont>
+                <TouchableOpacity onPress={ () => navigation.navigate("Product_page")}>
+                  <Image source = {require('./../assets/kreslo.jpg')} style={{width: 168, height: 95, borderRadius: 13}}/>
+                  <Price>19149₽</Price>
+                  <Name>Кресло кожанное премиум</Name>
+                </TouchableOpacity>
+              </FlexCont>
+            </FlexBox>    
             <BottomNav> </BottomNav>
           
         </SafeAreaView>
