@@ -34,7 +34,7 @@ const Lower_Nav = styled.View`
 `;
 
 const Bot = styled.View`
-  top: 1%;
+  top: 8%;
   width: auto;
 `;
 

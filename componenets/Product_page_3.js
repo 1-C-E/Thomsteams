@@ -7,25 +7,25 @@ export default function Product_page_1({navigation}) {
     return (
         <View>
             <Header_2/>
-            <ImageBackground source={require('./../assets/computer_table.png')}
+            <ImageBackground source={require('./../assets/bed.jpg')}
                    style={{marginTop: 10, height: 350}}
                    imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
             <Product_information>
-                <Product_name>Стол компьютерный уно-75
-                    30*125*225 белый
+                <Product_name>Кровать двуспальная дуб
+                    100*200*50 белый
                 </Product_name>
 
                 <Feedback_block>
                     <Stars>
                         <Image source={require('./../assets/star_yellow.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
+                        <Image source={require('./../assets/star_yellow.png')}/>
+                        <Image source={require('./../assets/star_yellow.png')}/>
+                        <Image source={require('./../assets/star_yellow.png')}/>
+                        <Image source={require('./../assets/star_yellow.png')}/>
                     </Stars>
-                    <Reviews>215 отзывов</Reviews>
-                    <Questions>78 вопросов</Questions>
+                    <Reviews>1336 отзывов</Reviews>
+                    <Questions>0 вопросов</Questions>
                 </Feedback_block>
 
                 <View>
@@ -40,7 +40,7 @@ export default function Product_page_1({navigation}) {
 
                 <Offer_block>
                     <View style={{flexDirection: 'row'}}>
-                        <Price>7 856 рублей</Price>
+                        <Price>55 499 рублей</Price>
                         <Devilery>Доставим 15 ноября</Devilery>
                     </View>
 

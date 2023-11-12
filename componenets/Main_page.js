@@ -32,43 +32,43 @@ export default function Main_page({navigation}) {
 
             <FlexBox>
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
                                       style={{padding: 5}}>
                         <Image source={require('../assets/computer_table.png')}
                                style={styles.furniture}/>
-                        <Price>14999₽</Price>
-                        <Name>Диван кожанный черный</Name>
+                        <Price>7 856₽</Price>
+                        <Name>Стол компьютерный УНО-75 белый</Name>
                     </TouchableOpacity>
                 </FlexCont>
 
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_2")}
                                       style={{padding: 5}}>
                         <Image source={require('../assets/table.jpg')}
                                style={styles.furniture}/>
-                        <Price>10999₽</Price>
-                        <Name>Стол натуральное дерево</Name>
+                        <Price>10 999₽</Price>
+                        <Name>Стол натуральная сосновая древесина</Name>
                     </TouchableOpacity>
                 </FlexCont>
 
                 <Break/>
 
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_3")}
                                       style={{padding: 5}}>
                         <Image source={require('../assets/bed.jpg')}
                                style={styles.furniture}/>
-                        <Price>55499₽</Price>
+                        <Price>55 499₽</Price>
                         <Name>Кровать двуспальная дуб</Name>
                     </TouchableOpacity>
                 </FlexCont>
 
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
                                       style={{padding: 5}}>
                         <Image source={require('../assets/armchair.jpg')}
                                style={styles.furniture}/>
-                        <Price>19149₽</Price>
+                        <Price>19 149₽</Price>
                         <Name>Кресло кожанное премиум</Name>
                     </TouchableOpacity>
                 </FlexCont>
