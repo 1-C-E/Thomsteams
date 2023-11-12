@@ -6,14 +6,14 @@ export default function BottomNav() {
     return (
         <Bot>
             <Lower_Nav>
-                <TouchableOpacity style={{ paddingTop: 7}}>
-                    <Image source = {require('../assets/neuronet.png')} style={{width: 30, height: 30}}  />
+                <TouchableOpacity style={{paddingTop: 7}}>
+                    <Image source={require('../assets/neuronet.png')} style={{width: 30, height: 30}}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ paddingTop: 7}}>
-                    <Image source = {require('../assets/plus.png')} style={{width: 30, height: 30}} />
+                <TouchableOpacity style={{paddingTop: 7}}>
+                    <Image source={require('../assets/plus.png')} style={{width: 30, height: 30}}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ paddingTop: 7}}>
-                    <Image source = {require('../assets/home.png')} style={{width: 30, height: 30}} />
+                <TouchableOpacity style={{paddingTop: 7}}>
+                    <Image source={require('../assets/home.png')} style={{width: 30, height: 30}}/>
                 </TouchableOpacity>
             </Lower_Nav>
         </Bot>
@@ -34,6 +34,6 @@ const Lower_Nav = styled.View`
 `;
 
 const Bot = styled.View`
-    top: 1%;
+  top: 1%;
 `;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, Image, ImageBackground, TouchableOpacity} from 'react-native';
+import {View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 import styled from 'styled-components'
 import Header_2 from "./Header_2";
 
@@ -8,8 +8,7 @@ export default function Product_page() {
         <View style={{position: 'center'}}>
             <Header_2/>
             <Image source={require('./../assets/computer_table.png')}
-                   style={{marginTop: 10, height: 350}}
-            />
+                   style={{marginTop: 10, height: 350}}/>
 
             <Product_information>
                 <Product_name>Стол компьютерный уно-75
@@ -110,4 +109,4 @@ const Place_an_order = styled.Text`
   width: 310px;
   height: 40px;
   border-radius: 10px;
-`
+`;

@@ -6,7 +6,6 @@ import Header_1 from "./Header_1";
 import BottomNav from "./Bottom_menu";
 import Store from "./store";
 
-
 export default function Main_page({navigation}) {
     return (
         <SafeAreaView>
@@ -15,7 +14,7 @@ export default function Main_page({navigation}) {
 
             <ImageBackground source={require('./../assets/gradient_2.png')}
                              style={{paddingHorizontal: 6}}
-            imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
+                             imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
                 <Header_1/>
                 <Input>Введите запрос</Input>
 
@@ -30,7 +29,6 @@ export default function Main_page({navigation}) {
                            style={{width: 81, height: 117}}/>
                 </Articles_block>
             </ImageBackground>
-
 
             <FlexBox>
                 <FlexCont>

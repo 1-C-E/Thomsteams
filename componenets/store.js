@@ -2,7 +2,6 @@ import React from "react";
 import {Image, TouchableOpacity} from 'react-native';
 import styled from 'styled-components'
 
-
 export default function Store_page({navigation}) {
     return (
         <FlexBox>
