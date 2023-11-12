@@ -5,7 +5,7 @@ import Header_2 from "./Header_2";
 
 export default function Product_page() {
     return (
-        <View style={{position: 'center'}}>
+        <View>
             <Header_2/>
             <Image source={require('./../assets/computer_table.png')}
                    style={{marginTop: 10, height: 350}}/>
