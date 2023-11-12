@@ -7,8 +7,9 @@ export default function Product_page() {
     return (
         <View>
             <Header_2/>
-            <Image source={require('./../assets/computer_table.png')}
-                   style={{marginTop: 10, height: 350}}/>
+            <ImageBackground source={require('./../assets/computer_table.png')}
+                   style={{marginTop: 10, height: 350}}
+                   imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
             <Product_information>
                 <Product_name>Стол компьютерный уно-75
