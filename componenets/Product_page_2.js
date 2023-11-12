@@ -3,28 +3,28 @@ import {View, Image, ImageBackground, TouchableOpacity, Text} from 'react-native
 import styled from 'styled-components'
 import Header_2 from "./Header_2";
 
-export default function Product_page_1({navigation}) {
+export default function Product_page_2({navigation}) {
     return (
         <View>
             <Header_2/>
-            <ImageBackground source={require('./../assets/computer_table.png')}
+            <ImageBackground source={require('./../assets/table.jpg')}
                    style={{marginTop: 10, height: 350}}
                    imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
             <Product_information>
-                <Product_name>Стол компьютерный уно-75
-                    30*125*225 белый
+                <Product_name>Стол натуральная сосновая древесина
+                    40*78*56 лакированный
                 </Product_name>
 
                 <Feedback_block>
                     <Stars>
                         <Image source={require('./../assets/star_yellow.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
+                        <Image source={require('./../assets/star_yellow.png')}/>
+                        <Image source={require('./../assets/star_yellow.png')}/>
+                        <Image source={require('./../assets/star_yellow.png')}/>
                         <Image source={require('./../assets/start_gray.png')}/>
                     </Stars>
-                    <Reviews>215 отзывов</Reviews>
+                    <Reviews>228 отзывов</Reviews>
                     <Questions>78 вопросов</Questions>
                 </Feedback_block>
 
@@ -40,7 +40,7 @@ export default function Product_page_1({navigation}) {
 
                 <Offer_block>
                     <View style={{flexDirection: 'row'}}>
-                        <Price>7 856 рублей</Price>
+                        <Price>10 999 рублей</Price>
                         <Devilery>Доставим 15 ноября</Devilery>
                     </View>
 
