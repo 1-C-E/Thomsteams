@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {StatusBar} from 'expo-status-bar';
-import {Image, SafeAreaView, TouchableOpacity, ImageBackground} from 'react-native';
+import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground} from 'react-native';
 import styled from 'styled-components';
 import Header_1 from "./Header_1";
 import BottomNav from "./Bottom_menu";
@@ -20,30 +20,32 @@ export default function Main_page({navigation}) {
 
                 <Articles_block style={{}}>
                     <Image source={require('./../assets/article_1.png')}
-                           style={{width: 81, height: 117}}/>
+                           style={styles.article_image}/>
 
                     <Image source={require('./../assets/article_2.png')}
-                           style={{width: 81, height: 117}}/>
+                           style={styles.article_image}/>
 
                     <Image source={require('./../assets/article_3.png')}
-                           style={{width: 81, height: 117}}/>
+                           style={styles.article_image}/>
                 </Articles_block>
             </ImageBackground>
 
             <FlexBox>
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}>
-                        <Image source={require('../assets/sofa.jpg')}
-                               style={{width: 168, height: 95, borderRadius: 13}}/>
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                                      style={{padding: 5}}>
+                        <Image source={require('../assets/computer_table.png')}
+                               style={styles.furniture}/>
                         <Price>14999₽</Price>
                         <Name>Диван кожанный черный</Name>
                     </TouchableOpacity>
                 </FlexCont>
 
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                                      style={{padding: 5}}>
                         <Image source={require('../assets/table.jpg')}
-                               style={{width: 168, height: 95, borderRadius: 13, justifyContent: "space-around"}}/>
+                               style={styles.furniture}/>
                         <Price>10999₽</Price>
                         <Name>Стол натуральное дерево</Name>
                     </TouchableOpacity>
@@ -52,18 +54,20 @@ export default function Main_page({navigation}) {
                 <Break/>
 
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                                      style={{padding: 5}}>
                         <Image source={require('../assets/bed.jpg')}
-                               style={{width: 168, height: 95, borderRadius: 13}}/>
+                               style={styles.furniture}/>
                         <Price>55499₽</Price>
                         <Name>Кровать двуспальная дуб</Name>
                     </TouchableOpacity>
                 </FlexCont>
 
                 <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Product_page")}
+                                      style={{padding: 5}}>
                         <Image source={require('../assets/armchair.jpg')}
-                               style={{width: 168, height: 95, borderRadius: 13}}/>
+                               style={styles.furniture}/>
                         <Price>19149₽</Price>
                         <Name>Кресло кожанное премиум</Name>
                     </TouchableOpacity>
@@ -78,11 +82,27 @@ export default function Main_page({navigation}) {
     );
 }
 
+const styles = StyleSheet.create({
+    article_image: {
+        width: 81,
+        height: 115,
+        borderColor: '#FFF',
+        borderWidth: 2,
+        borderRadius: 15
+    },
+
+    furniture: {
+        width: 'auto',
+        height: 90,
+        borderRadius: 12,
+    }
+});
+
 const FlexBox = styled.View`
   margin-top: 20px;
   flex-direction: row;
   justify-content: space-around;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 `;
 
 const Articles_block = styled.View`
@@ -104,10 +124,10 @@ const Input = styled.TextInput`
 `;
 
 const FlexCont = styled.View`
-  width: 170px;
+  width: 150px;
   height: 150px;
   border-radius: 14px;
-  border: 1px solid #B6D3FF;
+  border: 1.5px #B6D3FF;
   background: #FFF;
   backdrop-filter: blur(12px);
 `;
