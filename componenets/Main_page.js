@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View, Image, ImageBackground, SafeAreaView, TouchableOpacity} from 'react-native';
+import {Image, SafeAreaView, TouchableOpacity, ImageBackground} from 'react-native';
 import styled from 'styled-components';
-import Header from "./Header";
+import Header_1 from "./Header_1";
 import BottomNav from "./Bottom_menu";
 import Store from "./store";
 
@@ -13,11 +13,13 @@ export default function Main_page({navigation}) {
 
             <StatusBar></StatusBar>
 
-            <ImageBackground source={require('./../assets/gradient_2.png')}>
-                <Header/>
+            <ImageBackground source={require('./../assets/gradient_2.png')}
+                             style={{paddingHorizontal: 6}}
+            imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
+                <Header_1/>
                 <Input>Введите запрос</Input>
 
-                <Articles_block style={{justifyContent: 'space-around'}}>
+                <Articles_block style={{}}>
                     <Image source={require('./../assets/article_1.png')}
                            style={{width: 81, height: 117}}/>
 
@@ -88,12 +90,15 @@ const FlexBox = styled.View`
 const Articles_block = styled.View`
   flex-direction: row;
   margin: 20px 12px 0 14px;
-  padding-bottom: 25px;
+  padding: 0 2% 25px 2%;
+  justify-content: space-between;
+  width: auto;
 `;
 
-const Input = styled.Text`
+const Input = styled.TextInput`
   margin: 44px 20px 0 20px;
-  padding: 10px 0 10px 14px;
+  padding: 6px 0 6px 14px;
+  width: auto;
   color: #fff;
   border-width: 1.5px;
   border-radius: 15px;

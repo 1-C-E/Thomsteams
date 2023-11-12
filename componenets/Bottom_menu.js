@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 import styled from 'styled-components'
 
 export default function BottomNav() {
@@ -7,13 +7,13 @@ export default function BottomNav() {
         <Bot>
             <Lower_Nav>
                 <TouchableOpacity style={{ paddingTop: 7}}>
-                    <Image source = {require('./../assets/3d_space.png')} style={{width: 30, height: 30}}  />
+                    <Image source = {require('../assets/neuronet.png')} style={{width: 30, height: 30}}  />
                 </TouchableOpacity>
                 <TouchableOpacity style={{ paddingTop: 7}}>
                     <Image source = {require('../assets/plus.png')} style={{width: 30, height: 30}} />
                 </TouchableOpacity>
                 <TouchableOpacity style={{ paddingTop: 7}}>
-                    <Image source = {require('./../assets/5.png')} style={{width: 30, height: 30}} />
+                    <Image source = {require('../assets/home.png')} style={{width: 30, height: 30}} />
                 </TouchableOpacity>
             </Lower_Nav>
         </Bot>

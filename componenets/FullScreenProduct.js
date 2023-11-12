@@ -1,13 +1,15 @@
 import React from "react";
-import {StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image} from 'react-native';
+import {View, Text, Image, ImageBackground, TouchableOpacity} from 'react-native';
 import styled from 'styled-components'
-import Header from "./Header";
+import Header_2 from "./Header_2";
 
 export default function Product_page() {
     return (
         <View style={{position: 'center'}}>
-            <Header/>
-            <Image source={require('./../assets/computer_table.jpg')}/>
+            <Header_2/>
+            <Image source={require('./../assets/computer_table.png')}
+                   style={{marginTop: 10, height: 350}}
+            />
 
             <Product_information>
                 <Product_name>Стол компьютерный уно-75
@@ -28,9 +30,16 @@ export default function Product_page() {
 
                 <Offer_block>
                     <View style={{flexDirection: 'row'}}>
-                    <Price>7 599 рублей</Price>
-                    <Devilery>Доставим 15 ноября</Devilery>
+                        <Price>7 599 рублей</Price>
+                        <Devilery>Доставим 15 ноября</Devilery>
                     </View>
+
+                    <TouchableOpacity style={{marginTop: 10}}>
+                        <ImageBackground source={require('./../assets/place_an_order.png')}
+                                         imageStyle={{borderRadius: 10}}>
+                            <Place_an_order></Place_an_order>
+                        </ImageBackground>
+                    </TouchableOpacity>
                 </Offer_block>
 
                 {/*<Text style ={{fontSize: 30}}>Ты заставлял меня сосать, но я тебе не сосала</Text>*/}
@@ -91,3 +100,14 @@ const Devilery = styled.Text`
   font-size: 10px;
   font-weight: 800;
 `;
+
+const Place_an_order = styled.Text`
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  width: 310px;
+  height: 40px;
+  border-radius: 10px;
+`
