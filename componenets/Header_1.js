@@ -26,7 +26,7 @@ export default function Header_1() {
 
 const Head = styled.View`
   flex-direction: row;
-  margin: 20px 14px 0 14px;
+  margin: 20px 14px 100px 14px;
 `;
 
 const Thoms = styled.Text`

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground} from 'react-native';
+import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView, StickyHeaderComponent} from 'react-native';
 import styled from 'styled-components';
 import Header_1 from "./Header_1";
 import BottomNav from "./Bottom_menu";
@@ -11,71 +11,75 @@ export default function Main_page({navigation}) {
         <SafeAreaView>
 
             <StatusBar></StatusBar>
+            <ScrollView>
 
-            <ImageBackground source={require('./../assets/gradient_2.png')}
-                             style={{paddingHorizontal: 6}}
-                             imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
-                <Header_1/>
-                <Input>Введите запрос</Input>
+                <ImageBackground source={require('./../assets/gradient_2.png')}
+                                 style={{paddingHorizontal: 6}}
+                                 imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
+                    <Header_1/>
+                    <Input>Введите запрос</Input>
 
-                <Articles_block style={{}}>
-                    <Image source={require('./../assets/article_1.png')}
-                           style={styles.article_image}/>
+                    <Articles_block style={{}}>
+                        <Image source={require('./../assets/article_1.png')}
+                               style={styles.article_image}/>
 
-                    <Image source={require('./../assets/article_2.png')}
-                           style={styles.article_image}/>
+                        <Image source={require('./../assets/article_2.png')}
+                               style={styles.article_image}/>
 
-                    <Image source={require('./../assets/article_3.png')}
-                           style={styles.article_image}/>
-                </Articles_block>
-            </ImageBackground>
+                        <Image source={require('./../assets/article_3.png')}
+                               style={styles.article_image}/>
+                    </Articles_block>
+                </ImageBackground>
 
-            <FlexBox>
-                <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
-                                      style={{padding: 5}}>
-                        <Image source={require('../assets/computer_table.png')}
-                               style={styles.furniture}/>
-                        <Price>7 856₽</Price>
-                        <Name>Стол компьютерный УНО-75 белый</Name>
-                    </TouchableOpacity>
-                </FlexCont>
+                <FlexBox>
+                    <FlexCont>
+                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
+                                          style={{padding: 5}}>
+                            <Image source={require('../assets/computer_table.png')}
+                                   style={styles.furniture}/>
+                            <Price>7 856₽</Price>
+                            <Name>Стол компьютерный УНО-75 белый</Name>
+                        </TouchableOpacity>
+                    </FlexCont>
 
-                <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_2")}
-                                      style={{padding: 5}}>
-                        <Image source={require('../assets/table.jpg')}
-                               style={styles.furniture}/>
-                        <Price>10 999₽</Price>
-                        <Name>Стол натуральная сосновая древесина</Name>
-                    </TouchableOpacity>
-                </FlexCont>
+                    <FlexCont>
+                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_2")}
+                                          style={{padding: 5}}>
+                            <Image source={require('../assets/table.jpg')}
+                                   style={styles.furniture}/>
+                            <Price>10 999₽</Price>
+                            <Name>Стол натуральная сосновая древесина</Name>
+                        </TouchableOpacity>
+                    </FlexCont>
 
-                <Break/>
+                    <Break/>
 
-                <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_3")}
-                                      style={{padding: 5}}>
-                        <Image source={require('../assets/bed.jpg')}
-                               style={styles.furniture}/>
-                        <Price>55 499₽</Price>
-                        <Name>Кровать двуспальная дуб</Name>
-                    </TouchableOpacity>
-                </FlexCont>
+                    <FlexCont>
+                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_3")}
+                                          style={{padding: 5}}>
+                            <Image source={require('../assets/bed.jpg')}
+                                   style={styles.furniture}/>
+                            <Price>55 499₽</Price>
+                            <Name>Кровать двуспальная дуб</Name>
+                        </TouchableOpacity>
+                    </FlexCont>
 
-                <FlexCont>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
-                                      style={{padding: 5}}>
-                        <Image source={require('../assets/armchair.jpg')}
-                               style={styles.furniture}/>
-                        <Price>19 149₽</Price>
-                        <Name>Кресло кожанное премиум</Name>
-                    </TouchableOpacity>
-                </FlexCont>
+                    <FlexCont>
+                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
+                                          style={{padding: 5}}>
+                            <Image source={require('../assets/armchair.jpg')}
+                                   style={styles.furniture}/>
+                            <Price>19 149₽</Price>
+                            <Name>Кресло кожанное премиум</Name>
+                        </TouchableOpacity>
+                    </FlexCont>
 
-            </FlexBox>
+                </FlexBox>
+            </ScrollView>
+            <StickyHeaderComponent>
+                <BottomNav/>
+            </StickyHeaderComponent>
 
-            <BottomNav/>
 
         </SafeAreaView>
 
