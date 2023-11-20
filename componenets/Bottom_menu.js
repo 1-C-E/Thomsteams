@@ -1,15 +1,17 @@
 import React from "react";
 import {Image, TouchableOpacity} from 'react-native';
 import styled from 'styled-components'
+import Create_Page  from "./Create_page";
+import Navigate from "../navigate";
 
-export default function BottomNav() {
+export default function BottomNav({navigation}) {
     return (
         <Bot>
             <Lower_Nav>
                 <TouchableOpacity style={{paddingTop: 7}}>
                     <Image source={require('../assets/home.png')} style={{width: 30, height: 30}}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={{paddingTop: 7}}>
+                <TouchableOpacity style={{paddingTop: 7}} onPress={() => navigation.navigate("Create_Page")}>
                     <Image source={require('../assets/plus.png')} style={{width: 30, height: 30}}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={{paddingTop: 7}}>
@@ -34,7 +36,9 @@ const Lower_Nav = styled.View`
 `;
 
 const Bot = styled.View`
-  top: 2%;
-  width: auto;
+    
+    position: absolute;
+    top:180%;
+    left: 1.5%
 `;
 

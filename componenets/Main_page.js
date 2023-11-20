@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView, StickyHeaderComponent} from 'react-native';
+import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
 import Header_1 from "./Header_1";
-import BottomNav from "./Bottom_menu";
-import Store from "./store";
+import Navigation from "../navigate";
+import Navigate from "../navigate";
 
 export default function Main_page({navigation}) {
     return (
         <SafeAreaView>
-
+            
             <StatusBar></StatusBar>
             <ScrollView>
 
@@ -76,11 +76,6 @@ export default function Main_page({navigation}) {
 
                 </FlexBox>
             </ScrollView>
-            <StickyHeaderComponent>
-                <BottomNav/>
-            </StickyHeaderComponent>
-
-
         </SafeAreaView>
 
     );
@@ -118,7 +113,7 @@ const Articles_block = styled.View`
 `;
 
 const Input = styled.TextInput`
-  margin: 44px 20px 0 20px;
+  margin: -10px 20px 0 20px;
   padding: 6px 0 6px 14px;
   width: auto;
   color: #fff;
@@ -157,5 +152,24 @@ const Price = styled.Text`
 const Break = styled.View`
   flex-basis: 100%;
   height: 17px;
+  `
+
+  const Lower_Nav = styled.View`
+  width: 350px;
+  height: 50px;
+  border: 1px solid #CCC;
+  border-radius: 14px;
+  background: #FFF;
+  backdrop-filter: blur(12px);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  flex-direction: row
 `;
 
+const Bot = styled.View`
+    
+    top: 0%;
+  
+     width: auto;
+`;
