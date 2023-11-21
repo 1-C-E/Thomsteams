@@ -27,6 +27,7 @@ export default function Header_1({ navigation }) {
 const Head = styled.View`
   flex-direction: row;
   margin: 20px 14px 100px 14px;
+  
 `;
 
 const Thoms = styled.Text`
@@ -39,6 +40,7 @@ const Navbar = styled.View`
   flex-direction: row;
   margin-left: auto;
   margin-top: 12px;
+  
 `;
 
 const Nav_element = styled.Text`

@@ -11,7 +11,7 @@ export default function BottomNav({navigation}) {
                 <TouchableOpacity style={{paddingTop: 7}}>
                     <Image source={require('../assets/home.png')} style={{width: 30, height: 30}}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={{paddingTop: 7}} onPress={() => navigation.navigate("Create_Page")}>
+                <TouchableOpacity style={{paddingTop: 7}}>
                     <Image source={require('../assets/plus.png')} style={{width: 30, height: 30}}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={{paddingTop: 7}}>

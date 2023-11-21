@@ -1,12 +1,14 @@
 import React from "react";
-import {View, Image, ImageBackground, TouchableOpacity, Text} from 'react-native';
+import {View, Image, ImageBackground, TouchableOpacity, Text, ScrollView} from 'react-native';
 import styled from 'styled-components'
 import Header_2 from "./Header_2";
+
 
 export default function Product_page_2({navigation}) {
     return (
         <View>
             <Header_2/>
+            <ScrollView>
             <ImageBackground source={require('./../assets/table.jpg')}
                    style={{marginTop: 10, height: 350}}
                    imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
@@ -52,8 +54,16 @@ export default function Product_page_2({navigation}) {
                     </TouchableOpacity>
                 </Offer_block>
 
-                {/*<Text style ={{fontSize: 30}}>Ты заставлял меня сосать, но я тебе не сосала</Text>*/}
+                <View style = {{flexDirection: 'row'}}>
+                      <Text style = {{fontSize: 24, fontWeight: 600}}>Описание     </Text>
+                      <Text style = {{fontSize: 24, color: '#CCC'}}>Характеристики</Text>
+                    </View>
+                    <Text>Название продукта: Напольный шкаф Описание продукта: Представляем вам стильный и функциональный напольный шкаф, который станет идеальным решением для организации пространства и хранения ваших вещей. Этот шкаф прекрасно подойдет для любого интерьера, будь то спальня, гостиная или прихожая. </Text>
+                    <Text>Особенности продукта: Прочность и долговечность: изготовлен из высококачественных материалов, обеспечивающих долговечность и надежность шкафа. Стильный дизайн: современный и минималистичный дизайн, который будет гармонично сочетаться с любым интерьером. Вместительность: благодаря своей конструкции, шкаф предлагает достаточно места для хранения одежды, обуви, аксессуаров и других предметов.</Text>
+                    <Text style = {{color: 'white'}}>фффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффф</Text>
+
             </Product_information>
+            </ScrollView>
         </View>
     );
 }
