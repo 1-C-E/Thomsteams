@@ -13,20 +13,20 @@ export default function Main_page({navigation}) {
             <StatusBar></StatusBar>
             <ScrollView>
 
-                <ImageBackground source={require('./../assets/gradient_2.png')}
+                <ImageBackground source={require('../assets/img-main-page/gradient_2.png')}
                                  style={{paddingHorizontal: 6}}
                                  imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
                     <Header_1/>
                     <Input>Введите запрос</Input>
 
                     <Articles_block style={{}}>
-                        <Image source={require('./../assets/article_1.png')}
+                        <Image source={require('../assets/img-main-page/article_1.png')}
                                style={styles.article_image}/>
 
-                        <Image source={require('./../assets/article_2.png')}
+                        <Image source={require('../assets/img-main-page/article_2.png')}
                                style={styles.article_image}/>
 
-                        <Image source={require('./../assets/article_3.png')}
+                        <Image source={require('../assets/img-main-page/article_3.png')}
                                style={styles.article_image}/>
                     </Articles_block>
                 </ImageBackground>
@@ -35,7 +35,7 @@ export default function Main_page({navigation}) {
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/computer_table.png')}
+                            <Image source={require('../assets/img-main-page/computer_table.png')}
                                    style={styles.furniture}/>
                             <Price>7 856₽</Price>
                             <Name>Стол компьютерный УНО-75 белый</Name>
@@ -45,7 +45,7 @@ export default function Main_page({navigation}) {
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_2")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/table.jpg')}
+                            <Image source={require('../assets/img-main-page/table.jpg')}
                                    style={styles.furniture}/>
                             <Price>10 999₽</Price>
                             <Name>Стол натуральная сосновая древесина</Name>
@@ -57,7 +57,7 @@ export default function Main_page({navigation}) {
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_3")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/bed.jpg')}
+                            <Image source={require('../assets/img-main-page/bed.jpg')}
                                    style={styles.furniture}/>
                             <Price>55 499₽</Price>
                             <Name>Кровать двуспальная дуб</Name>
@@ -67,7 +67,7 @@ export default function Main_page({navigation}) {
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/armchair.jpg')}
+                            <Image source={require('../assets/img-main-page/armchair.jpg')}
                                    style={styles.furniture}/>
                             <Price>19 149₽</Price>
                             <Name>Кресло кожанное премиум</Name>

@@ -9,7 +9,7 @@ export default function Product_page_2({navigation}) {
         <View>
             <Header_2/>
             <ScrollView>
-            <ImageBackground source={require('./../assets/table.jpg')}
+            <ImageBackground source={require('../assets/img-main-page/table.jpg')}
                    style={{marginTop: 10, height: 350}}
                    imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
@@ -20,11 +20,11 @@ export default function Product_page_2({navigation}) {
 
                 <Feedback_block>
                     <Stars>
-                        <Image source={require('./../assets/star_yellow.png')}/>
-                        <Image source={require('./../assets/star_yellow.png')}/>
-                        <Image source={require('./../assets/star_yellow.png')}/>
-                        <Image source={require('./../assets/star_yellow.png')}/>
-                        <Image source={require('./../assets/start_gray.png')}/>
+                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                        <Image source={require('../assets/img-product-pages/start_gray.png')}/>
                     </Stars>
                     <Reviews>228 отзывов</Reviews>
                     <Questions>78 вопросов</Questions>
@@ -33,7 +33,7 @@ export default function Product_page_2({navigation}) {
                 <View>
                   <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
                     <Camera>
-                      <Image source={require('./../assets/camera.png')} style={{width: 40, height: 40}}/>
+                      <Image source={require('../assets/img-product-pages/camera.png')} style={{width: 40, height: 40}}/>
                       <Text style={{fontSize: 30, fontWeight:500}}> Опробовать</Text>
                     </Camera>
 
@@ -47,7 +47,7 @@ export default function Product_page_2({navigation}) {
                     </View>
 
                     <TouchableOpacity style={{marginTop: 10}}>
-                        <ImageBackground source={require('./../assets/place_an_order.png')}
+                        <ImageBackground source={require('../assets/img-product-pages/place_an_order.png')}
                                          imageStyle={{borderRadius: 10}}>
                             <Place_an_order></Place_an_order>
                         </ImageBackground>

@@ -9,14 +9,14 @@ export default function Header({navigation}) {
 
             <Navbar>
                 <TouchableOpacity style={{marginLeft: 16}}>
-                    <Image source={require('../assets/basket_black.png')}
-                           style={{width: 25, height: 25, marginLeft: 'auto', marginRight: 'auto'}}/>
+                    <Image source={require('../assets/img-upper-navbar/basket_black.png')}
+                           style={{width: 21, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
                     <Nav_element>Корзина</Nav_element>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{marginLeft: 16}}>
-                    <Image source={require('../assets/favorites_black.png')}
-                           style={{width: 25, height: 25, marginLeft: 'auto', marginRight: 'auto'}}/>
+                    <Image source={require('../assets/img-upper-navbar/favorites_black.png')}
+                           style={{width: 23, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
                     <Nav_element>Избранное</Nav_element>
                 </TouchableOpacity>
             </Navbar>

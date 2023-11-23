@@ -23,13 +23,13 @@ export default function MyStack() {
             tabBarIcon: ({focused, color, size}) => {
                 let rn = route.name;
                 if (rn === Main_Name){
-                    return <Image source = {require('./assets/neuronet.png')}/>
+                    return <Image source = {require('./assets/img-lower-navbar/home.png')} style={{width: 28, height: 28}}/>
                 }
                 else if (rn === User ){
-                    return <Image source = {require('./assets/user.png')} style={{width: 30, height: 30}}/>
+                    return <Image source = {require('./assets/img-lower-navbar/user.png')} style={{width: 28, height: 28}}/>
                 }
                 else if (rn === Create ){
-                    return <Image source = {require('./assets/plus.png')} style={{width: 30, height: 30}}/>
+                    return <Image source = {require('./assets/img-lower-navbar/plus.png')} style={{width: 28, height: 28}}/>
                 }
             }
       })}>
