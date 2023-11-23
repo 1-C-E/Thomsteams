@@ -4,70 +4,81 @@ import styled from 'styled-components'
 import Header_2 from "./Header_2";
 
 
-export default function Product_page_1({navigation}) {
+export default function Product_page_4({navigation}) {
     return (
         <View>
             <Header_2/>
             <ScrollView>
-            <ImageBackground source={require('../assets/img-main-page/armchair.jpg')}
-                   style={{marginTop: 10, height: 350}}
-                   imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
+                <ImageBackground source={require('../assets/img-main-page/computer_table.png')}
+                                 style={{marginTop: 10, height: 350}}
+                                 imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
-            <Product_information>
-                <Product_name>Кресло оббитое кожей офисных работников,
-                     черное
-                </Product_name>
+                <Product_information>
+                    <Product_name> Стол компьютерный уно-75
+                        30*125*225 белый
+                    </Product_name>
 
-                <Feedback_block>
-                    <Stars>
-                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                        <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                        <Image source={require('../assets/img-product-pages/start_gray.png')}/>
-                    </Stars>
-                    <Reviews>300 отзывов</Reviews>
-                    <Questions>5 вопросов</Questions>
-                </Feedback_block>
+                    <Feedback_block>
+                        <Stars>
+                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
+                        </Stars>
+                        <Reviews> 215 отзывов </Reviews>
+                        <Questions> 78 вопросов </Questions>
+                    </Feedback_block>
 
-                <View>
-                  <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
-                    <Camera>
-                      <Image source={require('../assets/img-product-pages/camera.png')} style={{width: 40, height: 40}}/>
-                      <Text style={{fontSize: 30, fontWeight:500}}> Опробовать</Text>
-                    </Camera>
+                    <View>
+                        <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
 
-                  </TouchableOpacity>
-                </View>
+                            <Camera>
+                                <Image source={require('../assets/img-product-pages/camera.png')}
+                                       style={{width: 30, height: 30, marginLeft: 'auto'}}/>
+                                <Text style={{fontSize: 22, fontWeight: 500, marginRight: 'auto'}}> Опробовать </Text>
+                            </Camera>
 
-                <Offer_block>
-                    <View style={{flexDirection: 'row'}}>
-                        <Price>19 149 рублей</Price>
-                        <Devilery>Доставим 15 ноября</Devilery>
+                        </TouchableOpacity>
                     </View>
 
-                    <TouchableOpacity style={{marginTop: 10}}>
-                        <ImageBackground source={require('../assets/img-product-pages/place_an_order.png')}
-                                         imageStyle={{borderRadius: 10}}>
-                            <Place_an_order></Place_an_order>
-                        </ImageBackground>
-                    </TouchableOpacity>
-                </Offer_block>
-                <View style = {{flexDirection: 'row'}}>
-                      <Text style = {{fontSize: 24, fontWeight: 600}}>Описание     </Text>
-                      <Text style = {{fontSize: 24, color: '#CCC'}}>Характеристики</Text>
+                    <Offer_block>
+                        <View style={{flexDirection: 'row'}}>
+                            <Price> 7 856 рублей </Price>
+                            <Devilery> Доставим 15 ноября </Devilery>
+                        </View>
+
+                        <TouchableOpacity style={{marginTop: 10}}>
+
+                            <ImageBackground source={require('../assets/img-product-pages/place_an_order.png')}
+                                             imageStyle={{borderRadius: 10, height: 40}}>
+
+                                <Place_an_order> Оформить заказ </Place_an_order>
+
+                            </ImageBackground>
+
+                        </TouchableOpacity>
+                    </Offer_block>
+
+                    <View style={{flexDirection: 'row', marginTop: 12}}>
+                        <Text style={{fontSize: 22, fontWeight: 600}}> Описание </Text>
+                        <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
-                <Text>Представляем вашему вниманию стильный и практичный шкаф для одежды, который станет отличным решением для хранения ваших вещей и украшения интерьера. Этот шкаф идеально подойдет для любой комнаты, будь то спальня, детская или прихожая.  </Text>
-                <Text>Особенности продукта: Прочность и долговечность - изготовлен из качественных материалов и имеет надежную конструкцию, которая гарантирует долговечность и стабильность. Стильный дизайн - современный внешний вид и минималистичная форма, которые идеально впишутся в любой интерьер. Вместимость - большое количество полок и отделений для хранения всей вашей одежды, а также аксессуаров и обуви.</Text>
-                <Text style = {{color: 'white'}}>фффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффф</Text>
-            </Product_information>
+
+                    <Text style={{marginTop: 16}}> Компьютерный стол “Альфа” - идеальное решение для тех, кто ценит
+                        комфорт и функциональность. Этот стол выполнен из высококачественных материалов, что
+                        обеспечивает его прочность и долговечность. Особенности компьютерного стола “Альфа”: –
+                        Просторное рабочее пространство позволяет разместить все необходимые аксессуары и оргтехнику.–
+                        Вместительные ящики и полки обеспечивают хранение документов, книг и других предметов.
+                    </Text>
+                </Product_information>
             </ScrollView>
         </View>
     );
 }
 
 const Product_information = styled.View`
-  margin: 10px 20px 0 20px;
+  margin: 10px 20px 100px 20px;
 `;
 
 const Feedback_block = styled.View`
@@ -120,23 +131,18 @@ const Devilery = styled.Text`
 `;
 
 const Place_an_order = styled.Text`
+  margin-top: 6px;
   color: #FFF;
   font-size: 18px;
   font-weight: 600;
-  margin-left: auto;
-  margin-right: auto;
-  width: 310px;
-  height: 40px;
-  border-radius: 10px;
+  text-align: center;
 `;
 
 const Camera = styled.View`
-  
-  margin-top: 10px;
-  padding: 15px;
-  background-color: #E2E2E2;
-  height: 70px;
-  width: auto;
-  border-radius: 20px;
+  padding-top: 10px;
   flex-direction: row;
+  margin-top: 10px;
+  background-color: #E2E2E2;
+  height: 52px;
+  border-radius: 20px;
 `;
