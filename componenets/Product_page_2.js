@@ -9,25 +9,25 @@ export default function Product_page_2({navigation}) {
         <View>
             <Header_2/>
             <ScrollView>
-                <ImageBackground source={require('../assets/img-main-page/computer_table.png')}
+                <ImageBackground source={require('../assets/img-main-page/floor_cabinet.png')}
                                  style={{marginTop: 10, height: 350}}
                                  imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
                 <Product_information>
-                    <Product_name> Стол компьютерный уно-75
-                        30*125*225 белый
+                    <Product_name> Шкаф напольный белый
+                        30*170*150
                     </Product_name>
 
                     <Feedback_block>
                         <Stars>
                             <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
-                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
-                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
                             <Image source={require('../assets/img-product-pages/start_gray.png')}/>
                         </Stars>
-                        <Reviews> 215 отзывов </Reviews>
-                        <Questions> 78 вопросов </Questions>
+                        <Reviews> 8 отзывов </Reviews>
+                        <Questions> 7 вопросов </Questions>
                     </Feedback_block>
 
                     <View>
@@ -44,8 +44,8 @@ export default function Product_page_2({navigation}) {
 
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
-                            <Price> 7 856 рублей </Price>
-                            <Devilery> Доставим 15 ноября </Devilery>
+                            <Price> 2 950 рублей </Price>
+                            <Devilery> Доставим  10 декабря </Devilery>
                         </View>
 
                         <TouchableOpacity style={{marginTop: 10}}>
@@ -65,11 +65,15 @@ export default function Product_page_2({navigation}) {
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
 
-                    <Text style={{marginTop: 16}}> Компьютерный стол “Альфа” - идеальное решение для тех, кто ценит
-                        комфорт и функциональность. Этот стол выполнен из высококачественных материалов, что
-                        обеспечивает его прочность и долговечность. Особенности компьютерного стола “Альфа”: –
-                        Просторное рабочее пространство позволяет разместить все необходимые аксессуары и оргтехнику.–
-                        Вместительные ящики и полки обеспечивают хранение документов, книг и других предметов.
+                    <Text style={{marginTop: 16, height: 'auto'}}>
+                        Название продукта: Напольный шкаф
+                        Описание продукта:
+                        Представляем вам стильный и функциональный напольный шкаф, который станет идеальным решением для организации пространства и хранения ваших вещей. Этот шкаф прекрасно подойдет для любого интерьера, будь то спальня, гостиная или прихожая.
+
+                        Особенности продукта:
+                        Прочность и долговечность: изготовлен из высококачественных материалов, обеспечивающих долговечность и надежность шкафа.
+                        Стильный дизайн: современный и минималистичный дизайн, который будет гармонично сочетаться с любым интерьером.
+                        Вместительность: благодаря своей конструкции, шкаф предлагает достаточно места для хранения одежды, обуви, аксессуаров и других предметов.
                     </Text>
                 </Product_information>
             </ScrollView>
