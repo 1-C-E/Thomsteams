@@ -17,7 +17,7 @@ export default function Store_page({navigation}) {
 
             <FlexCont>
                 <TouchableOpacity onPress={() => navigation.navigate("Product_page")}>
-                    <Image source={require('../assets/table.jpg')}
+                    <Image source={require('../assets/img-main-page/table.jpg')}
                            style={{width: 168, height: 95, borderRadius: 13, justifyContent: "space-around"}}/>
                     <Price>10999₽</Price>
                     <Name>Стол натуральное дерево</Name>
@@ -28,7 +28,7 @@ export default function Store_page({navigation}) {
 
             <FlexCont>
                 <TouchableOpacity onPress={() => navigation.navigate("Product_page")}>
-                    <Image source={require('../assets/bed.jpg')}
+                    <Image source={require('../assets/img-main-page/bed.jpg')}
                            style={{width: 168, height: 95, borderRadius: 13}}/>
                     <Price>55499₽</Price>
                     <Name>Кровать двуспальная дуб</Name>
@@ -37,7 +37,7 @@ export default function Store_page({navigation}) {
 
             <FlexCont>
                 <TouchableOpacity onPress={() => navigation.navigate("Product_page")}>
-                    <Image source={require('../assets/armchair.jpg')}
+                    <Image source={require('../assets/img-main-page/armchair.jpg')}
                            style={{width: 168, height: 95, borderRadius: 13}}/>
                     <Price>19149₽</Price>
                     <Name>Кресло кожанное премиум</Name>

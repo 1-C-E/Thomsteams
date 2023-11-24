@@ -1,70 +1,102 @@
 import React from "react";
-import {Image, ImageBackground, TouchableOpacity, View,  ScrollView, Text, StyleSheet} from "react-native";
+import {Image, ImageBackground, TouchableOpacity, View, ScrollView, Text, StyleSheet} from "react-native";
 import styled from 'styled-components';
 import Header from "./Header_2";
 
 
 export default function Profile_() {
     return (
-        <View style = {{backgroundColor: 'white'}}>
+        <View style={{backgroundColor: 'white'}}>
             <Header/>
             <ScrollView>
-                
-            <ImageBackground source={require('./../assets/pro_back.jpg')}
-                                 style={{paddingHorizontal: 6}}
-                                 imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
-           
-            <Center>
-                
-                <Photo_1 style = {{marginTop:10}}>
-                    <Image source={require('./../assets/prof_photo.png')} style= {{width: 147, height: 147}}/>
-                </Photo_1>
+                <Center>
 
-                <Premium style = {{marginTop:10}}>
-                    <Prof_Text>Премиум</Prof_Text>
-                </Premium>
+                    <ImageBackground source={require('../assets/img-profile/pro_back.jpg')}
+                                     style={{paddingHorizontal: 6}}
+                                     imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
 
-                <Name style = {{marginTop:10}}>Александр Наумов</Name>
 
-            </Center>
-            </ImageBackground>
-            <Center>
-            <Self_data style = {{marginTop:10}}>
-                    <View style = {{flexDirection: 'row'}}>
-                    <Text style = {{fontWeight: 600}}> alex.naumov1999@mail.ru</Text>
-                    <Text style = {{paddingLeft: 70}}>изменить</Text>
-                    </View>
-                    <View style = {{flexDirection: 'row', marginTop: 7}}>
-                    <Text style = {{fontWeight: 600}}>+7 914-228-78-56 </Text>
-                    <Text style = {{paddingLeft: 125}}>изменить</Text>
-                    </View>
-                </Self_data>
+                        <Photo_1 style={{marginTop: 10}}>
+                            <Image source={require('../assets/img-profile/prof_photo.png')}
+                                   style={{width: 147, height: 147}}/>
+                        </Photo_1>
 
-                <Status style = {{marginTop:10}}>
-                    <Text style = {{fontWeight: 600}}>Подписка активна (PREMIUM на 2 месяца)</Text>
-                    <View style = {{flexDirection: 'row'}}>
-                        <Text style = {{fontWeight: 600, paddingTop: 10}}>Автосписание средств включено</Text>
-                        <Text style = {{paddingLeft: 20, paddingTop: 10}}>изменить</Text>
-                    </View>
-                    <Image source = {require('./../assets/podpiska.png')} style = {{marginLeft: -6, marginTop: 20}}/>
-                    <Text style = {{color: 'gray', fontSize: 10, textAlign: 'center' }}>Увеличенные лимиты, доступ к новым возможностям и приоритетная поддержка</Text>
-                </Status>
+                        <Premium>
+                            <Prof_Text> Премиум </Prof_Text>
+                        </Premium>
 
-                <Your_furniture style = {{marginTop:10}}>
-                    <Text style = {{fontWeight: 600}}>Ваши модели (интерьер, мебель)</Text>
-                    <View style = {{flexDirection: 'row', marginTop:10, justifyContent: 'space-between'}}>
-                        <Image source={require('./../assets/armchair.jpg')} style = {styles.article_image}></Image>
-                        <Image source={require('./../assets/armchair.jpg')} style = {styles.article_image}></Image>
-                        <Image source={require('./../assets/armchair.jpg')} style = {styles.article_image}></Image>
-                    </View>
-                    
+                        <Name style={{marginTop: 10}}> Александр Наумов </Name>
 
-                </Your_furniture>
-            </Center>
+
+                    </ImageBackground>
+
+
+                    <Profile_block style={{marginTop: 10}}>
+                        <View style={{flexDirection: 'row'}}>
+                            <Text_in_prof_block> alex.naumov1999@mail.ru </Text_in_prof_block>
+                            <To_change> изменить </To_change>
+                        </View>
+                        <View style={{flexDirection: 'row', marginTop: 7}}>
+                            <Text_in_prof_block> +7 914-228-78-56 </Text_in_prof_block>
+                            <To_change> изменить </To_change>
+                        </View>
+                    </Profile_block>
+
+                    <Profile_block style={{marginTop: 10}}>
+                        <Text_in_prof_block> Подписка активна (PREMIUM на 2 месяца) </Text_in_prof_block>
+                        <View style={{flexDirection: 'row', marginTop: 15}}>
+                            <Text_in_prof_block> Автосписание средств включено </Text_in_prof_block>
+                            <To_change> изменить </To_change>
+                        </View>
+
+                        <TouchableOpacity>
+                            <ImageBackground source={require('../assets/img-profile/place_an_order_2.png')}
+                                             imageStyle={{borderRadius: 10}}
+                                             style={{marginTop: 14, width: 'auto', height: 40}}>
+                                <Text style={{
+                                    color: '#fff',
+                                    fontSize: 18,
+                                    fontWeight: '600',
+                                    textAlign: 'center',
+                                    marginTop: 6
+                                }}> Продлить подписку </Text>
+                            </ImageBackground>
+                        </TouchableOpacity>
+
+                        <Text style={{marginTop: 8, color: 'gray', fontSize: 10, textAlign: 'center'}}>
+                            Увеличенные лимиты, доступ к
+                            новым возможностям и приоритетная поддержка
+                        </Text>
+                    </Profile_block>
+
+                    <Profile_block style={{marginTop: 10}}>
+                        <Text style={{fontWeight: 600}}> Ваши модели (интерьер, мебель) </Text>
+
+                        <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
+
+                            <TouchableOpacity>
+                                <Image source={require('../assets/img-main-page/armchair.jpg')}
+                                       style={styles.article_image}></Image>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity>
+                                <Image source={require('../assets/img-main-page/armchair.jpg')}
+                                       style={styles.article_image}></Image>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity>
+                                <Image source={require('../assets/img-main-page/armchair.jpg')}
+                                       style={styles.article_image}></Image>
+                            </TouchableOpacity>
+                        </View>
+
+                    </Profile_block>
+                </Center>
             </ScrollView>
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     article_image: {
         width: 100,
@@ -81,79 +113,58 @@ const styles = StyleSheet.create({
     }
 });
 
-
-
-const  Break = styled.View`
-    flex-basis: 2%;
-    height: 1px;
-`;
-
 const Center = styled.View`
-    margin-left: auto;
-    margin-right: auto;
-
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 82px;
 `;
 
 const Premium = styled.View`
-    background-color: #AFB7FF;
-    width: 80px;
-    height: 20px;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #AFB7FF;
+  width: 80px;
+  height: 27px;
+  border-radius: 15px;
 `;
 
 const Prof_Text = styled.Text`
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
+  margin-top: 4px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
 `;
 
 const Photo_1 = styled.View`
-    height: 150px;
-    border-radius: 75px;
-    border: 1.5px #B6D3FF;
-    background: #FFF;
-    backdrop-filter: blur(12px);
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  border-radius: 75px;
+  border: 1.5px #B6D3FF;
+  background: #FFF;
 `;
 
 const Name = styled.Text`
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
 `;
 
-const Self_data = styled.View`
-    background_color: #F2F2F2;
-    width: 330px;
-    height: 75px; 
-    border-radius: 14px;
-    padding: 14px 10px 14px 16px;
-    
+const Profile_block = styled.View`
+  background-color: #F2F2F2;
+  width: 330px;
+  border-radius: 14px;
+  padding: 14px 16px 14px 16px;
 `;
 
-const Status = styled.View`
-    background_color: #F2F2F2;
-    width: 330px;
-    height: 150px; 
-    border-radius: 14px;
-    padding: 14px 10px 14px 16px;
+const Text_in_prof_block = styled.Text`
+  font-size: 12px;
+  font-weight: 600;
+`
 
-`;
-
-const Your_furniture = styled.View`
-    background_color: #F2F2F2;
-    width: 330px;
-    height: 175px; 
-    border-radius: 14px;
-    padding: 14px 10px 14px 16px;
-
-`;
-
-const Story = styled.Image`
-
-
+const To_change = styled.Text`
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 500;
 `;

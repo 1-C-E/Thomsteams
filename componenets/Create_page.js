@@ -2,7 +2,6 @@ import React from "react";
 import {Image, TouchableOpacity, View, LinearGradient} from "react-native";
 import {StatusBar} from 'expo-status-bar';
 import styled from 'styled-components'
-import BottomNav from "./Bottom_menu";
 import Header from "./Header_2";
 
 export default function Create_Page_1({navigation}){
@@ -22,7 +21,7 @@ export default function Create_Page_1({navigation}){
                 <Nadpis>Песочница</Nadpis>
             </Boxes>
 
-            <BottomNav/>
+
         </View>
     )
 }

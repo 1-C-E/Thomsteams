@@ -9,25 +9,31 @@ import Navigate from "../navigate";
 export default function Main_page({navigation}) {
     return (
         <SafeAreaView>
-            
+
             <StatusBar></StatusBar>
             <ScrollView>
 
-                <ImageBackground source={require('./../assets/gradient_2.png')}
+                <ImageBackground source={require('../assets/img-main-page/gradient_2.png')}
                                  style={{paddingHorizontal: 6}}
                                  imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
                     <Header_1/>
                     <Input>Введите запрос</Input>
 
                     <Articles_block style={{}}>
-                        <Image source={require('./../assets/article_1.png')}
-                               style={styles.article_image}/>
+                        <TouchableOpacity>
+                            <Image source={require('../assets/img-main-page/article_1.png')}
+                                   style={styles.article_image}/>
+                        </TouchableOpacity>
 
-                        <Image source={require('./../assets/article_2.png')}
-                               style={styles.article_image}/>
+                        <TouchableOpacity>
+                            <Image source={require('../assets/img-main-page/article_2.png')}
+                                   style={styles.article_image}/>
+                        </TouchableOpacity>
 
-                        <Image source={require('./../assets/article_3.png')}
-                               style={styles.article_image}/>
+                        <TouchableOpacity>
+                            <Image source={require('../assets/img-main-page/article_3.png')}
+                                   style={styles.article_image}/>
+                        </TouchableOpacity>
                     </Articles_block>
                 </ImageBackground>
 
@@ -35,20 +41,20 @@ export default function Main_page({navigation}) {
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/computer_table.png')}
+                            <Image source={require('../assets/img-main-page/computer_table.png')}
                                    style={styles.furniture}/>
-                            <Price>7 856₽</Price>
                             <Name>Стол компьютерный УНО-75 белый</Name>
+                            <Price>7 856₽</Price>
                         </TouchableOpacity>
                     </FlexCont>
 
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_2")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/table.jpg')}
+                            <Image source={require('../assets/img-main-page/floor_cabinet.png')}
                                    style={styles.furniture}/>
-                            <Price>10 999₽</Price>
                             <Name>Стол натуральная сосновая древесина</Name>
+                            <Price>10 999₽</Price>
                         </TouchableOpacity>
                     </FlexCont>
 
@@ -57,20 +63,20 @@ export default function Main_page({navigation}) {
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_3")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/bed.jpg')}
+                            <Image source={require('../assets/img-main-page/wardrobe.png')}
                                    style={styles.furniture}/>
-                            <Price>55 499₽</Price>
-                            <Name>Кровать двуспальная дуб</Name>
+                            <Name> Кровать двуспальная дуб </Name>
+                            <Price> 55 499₽ </Price>
                         </TouchableOpacity>
                     </FlexCont>
 
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/armchair.jpg')}
+                            <Image source={require('../assets/img-main-page/armchair.jpg')}
                                    style={styles.furniture}/>
-                            <Price>19 149₽</Price>
-                            <Name>Кресло кожанное премиум</Name>
+                            <Name> Кресло кожанное премиум </Name>
+                            <Price> 19 149₽ </Price>
                         </TouchableOpacity>
                     </FlexCont>
 
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
 });
 
 const FlexBox = styled.View`
-  margin-top: 20px;
+  margin: 20px 0 16px 0;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -124,37 +130,29 @@ const Input = styled.TextInput`
 
 const FlexCont = styled.View`
   width: 150px;
-  height: 150px;
+  height: 160px;
   border-radius: 14px;
   border: 1.5px #B6D3FF;
   background: #FFF;
-  backdrop-filter: blur(12px);
 `;
 
 const Name = styled.Text`
-  position: absolute;
-  color: black;
   font-size: 13px;
-  padding-top: 95px;
-  padding-left: 10px;
   font-weight: 500;
 `;
 
 const Price = styled.Text`
-  position: absolute;
   color: black;
   font-size: 16px;
   font-weight: bold;
-  padding-top: 128px;
-  padding-left: 10px;
 `;
 
 const Break = styled.View`
   flex-basis: 100%;
   height: 17px;
-  `
+`
 
-  const Lower_Nav = styled.View`
+const Lower_Nav = styled.View`
   width: 350px;
   height: 50px;
   border: 1px solid #CCC;
@@ -167,9 +165,3 @@ const Break = styled.View`
   flex-direction: row
 `;
 
-const Bot = styled.View`
-    
-    top: 0%;
-  
-     width: auto;
-`;

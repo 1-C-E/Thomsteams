@@ -14,31 +14,37 @@ const First_Product_page = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen
-               name="Main_page"
-               component={Main_page}
-               options={{headerShown: false}}/>
+                name="Main_page"
+                component={Main_page}
+                options={{headerShown: false}}/>
+
             <Stack.Screen
-               name="Product_page_1"
-               component={Product_page_1}
-               options={{headerShown: false}}/>
+                name="Product_page_1"
+                component={Product_page_1}
+                options={{headerShown: false}}/>
+
             <Stack.Screen
-               name="Product_page_2"
-               component={Product_page_2}
-               options={{headerShown: false}}/>
+                name="Product_page_2"
+                component={Product_page_2}
+                options={{headerShown: false}}/>
+
             <Stack.Screen
-               name="Product_page_3"
-               component={Product_page_3}
-               options={{headerShown: false}}/>
+                name="Product_page_3"
+                component={Product_page_3}
+                options={{headerShown: false}}/>
+
             <Stack.Screen
-               name="Product_page_4"
-               component={Product_page_4}
-               options={{headerShown: false}}/>
+                name="Product_page_4"
+                component={Product_page_4}
+                options={{headerShown: false}}/>
+
             <Stack.Screen
-               name="Camera"
-               component={Camera_1}
-               options={{headerShown: false}}/>
+                name="Camera"
+                component={Camera_1}
+                options={{headerShown: false}}/>
 
         </Stack.Navigator>
     )
 }
+
 export {First_Product_page}
