@@ -1,25 +1,31 @@
 import React from "react";
-import {Image, TouchableOpacity, View, LinearGradient} from "react-native";
+import {Image, TouchableOpacity, View, LinearGradient, Alert} from "react-native";
 import {StatusBar} from 'expo-status-bar';
 import styled from 'styled-components'
 import Header from "./Header_2";
 
 export default function Create_Page_1({navigation}){
+    const Alertpress = () => Alert.alert("Внимание!",'Эта страница пока не доступна для запуска из приложения, мы покажем принцип работы из другого apk файла')
     return(
         <View>
             <StatusBar></StatusBar>
             <Header/>
 
+            <TouchableOpacity onPress={Alertpress}>
             <Boxes>
                 <Nadpis>Генерация интерьера по фотографии</Nadpis>
             </Boxes>
-
-            <Boxes_cool>
-                <Nadpis>Нейросеть Thomsteams</Nadpis>
-            </Boxes_cool>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={Alertpress}>
             <Boxes>
                 <Nadpis>Песочница</Nadpis>
             </Boxes>
+            </TouchableOpacity>
+            <TouchableOpacity onPress = {Alertpress}>
+            <Boxes_cool>
+                <Nadpis>Нейросеть Thomsteams</Nadpis>
+            </Boxes_cool>
+            </TouchableOpacity>
 
 
         </View>

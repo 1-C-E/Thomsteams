@@ -17,8 +17,8 @@ export default function Profile_() {
 
 
                         <Photo_1 style={{marginTop: 10}}>
-                            <Image source={require('../assets/img-profile/prof_photo.png')}
-                                   style={{width: 147, height: 147}}/>
+                            <Image source={require('../assets/img-profile/0d7af050f7bc56a4079b4f77f3680cb3.jpg')}
+                                   style={{width: 147, height: 147, borderRadius: 75}}/>
                         </Photo_1>
 
                         <Premium>
@@ -99,7 +99,7 @@ export default function Profile_() {
 
 const styles = StyleSheet.create({
     article_image: {
-        width: 100,
+        width: 95,
         height: 120,
         borderColor: '#B6D3FF',
         borderWidth: 2,
