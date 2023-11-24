@@ -5,19 +5,19 @@ import styled from 'styled-components'
 export default function Header({navigation}) {
     return (
         <Head>
-            <Thoms>thoms</Thoms>
+            <Thoms> thoms </Thoms>
 
             <Navbar>
                 <TouchableOpacity style={{marginLeft: 16}}>
                     <Image source={require('../assets/img-upper-navbar/basket_black.png')}
                            style={{width: 21, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
-                    <Nav_element>Корзина</Nav_element>
+                    <Nav_element> Корзина </Nav_element>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{marginLeft: 16}}>
                     <Image source={require('../assets/img-upper-navbar/favorites_black.png')}
                            style={{width: 23, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
-                    <Nav_element>Избранное</Nav_element>
+                    <Nav_element> Избранное </Nav_element>
                 </TouchableOpacity>
             </Navbar>
         </Head>
@@ -41,6 +41,7 @@ const Navbar = styled.View`
   flex-direction: row;
   margin-left: auto;
   margin-top: 12px;
+  margin-bottom: 15px;
   
 `;
 
