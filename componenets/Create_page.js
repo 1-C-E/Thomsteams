@@ -1,5 +1,6 @@
 import React from "react";
 import {Image, TouchableOpacity, View, LinearGradient, Alert} from "react-native";
+import {View, LinearGradient} from "react-native";
 import {StatusBar} from 'expo-status-bar';
 import styled from 'styled-components'
 import Header from "./Header_2";
@@ -13,12 +14,20 @@ export default function Create_Page_1({navigation}){
 
             <TouchableOpacity onPress={Alertpress}>
             <Boxes>
-                <Nadpis>Генерация интерьера по фотографии</Nadpis>
+                <Nadpis> Генерация интерьера по фотографии </Nadpis>
             </Boxes>
+
             </TouchableOpacity>
             <TouchableOpacity onPress={Alertpress}>
+
+
+            <Boxes_cool>
+                <Nadpis> Нейросеть Thomsteams </Nadpis>
+            </Boxes_cool>
+
+
             <Boxes>
-                <Nadpis>Песочница</Nadpis>
+                <Nadpis> Песочница </Nadpis>
             </Boxes>
             </TouchableOpacity>
             <TouchableOpacity onPress = {Alertpress}>
@@ -27,11 +36,9 @@ export default function Create_Page_1({navigation}){
             </Boxes_cool>
             </TouchableOpacity>
 
-
         </View>
     )
 }
-
 
 const Boxes = styled.View`
 margin: 20px 0 0 5px ;

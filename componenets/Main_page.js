@@ -62,7 +62,7 @@ export default function Main_page({navigation}) {
                             <Image source={require('../assets/img-main-page/computer_table.png')}
                                    style={styles.furniture}/>
                             <Name> Стол компьютерный УНО-75 белый </Name>
-                            <Price> 7 856₽ </Price>
+                            <Price> 7 599₽ </Price>
                         </TouchableOpacity>
                     </FlexCont>
 
@@ -71,7 +71,8 @@ export default function Main_page({navigation}) {
                                           style={{padding: 5}}>
                             <Image source={require('../assets/img-main-page/floor_cabinet.png')}
                                    style={styles.furniture}/>
-                            <Name> Стол натуральная сосновая древесина </Name>
+                            <Name> Шкаф напольный белый
+                                30*170*150 </Name>
                             <Price> 10 999₽ </Price>
                         </TouchableOpacity>
                     </FlexCont>
@@ -83,8 +84,11 @@ export default function Main_page({navigation}) {
                                           style={{padding: 5}}>
                             <Image source={require('../assets/img-main-page/wardrobe.png')}
                                    style={styles.furniture}/>
-                            <Name> Кровать двуспальная дуб </Name>
-                            <Price> 55 499₽ </Price>
+                            <Name>
+                                Шкаф для одежды FUN-5
+                                100*210*55
+                            </Name>
+                            <Price> 2 990₽ </Price>
                         </TouchableOpacity>
                     </FlexCont>
 

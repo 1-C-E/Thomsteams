@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
 const Center = styled.View`
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 82px;
+  margin-bottom: 100px;
 `;
 
 const Premium = styled.View`
