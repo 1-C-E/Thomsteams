@@ -17,5 +17,6 @@ application.apk - our react native application
 data analysis.rar - data analysis and machine learning
 -
 creating an interior.apk - development that allows you to create your own interior design
+-
 
 
