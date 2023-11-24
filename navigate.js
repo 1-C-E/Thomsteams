@@ -10,7 +10,8 @@ import Camera_1 from "./componenets/Camera";
 import Article_1 from "./componenets/Article_1";
 import Article_2 from "./componenets/Article_2";
 import Article_3 from "./componenets/Article_3";
-
+import Basket from "./componenets/Basket";
+import Favorites from "./componenets/Favorites";
 
 const Stack = createStackNavigator();
 
@@ -59,6 +60,16 @@ const First_Product_page = () => {
             <Stack.Screen
                 name="Article_3"
                 component={Article_3}
+                options={{headerShown: false}}/>
+
+            <Stack.Screen
+                name="Basket"
+                component={Basket}
+                options={{headerShown: false}}/>
+
+            <Stack.Screen
+                name="Favorites"
+                component={Favorites}
                 options={{headerShown: false}}/>
 
         </Stack.Navigator>
