@@ -2,7 +2,7 @@
 
 Наши разработки👇
 
-disk.yandex.ru/client/disk/Thomsteams
+https://disk.yandex.ru/client/disk/Thomsteams
 
 --------------------------------------------------------------------------------------
 
