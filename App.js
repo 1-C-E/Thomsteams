@@ -6,9 +6,9 @@ import Navigate from "./navigate";
 
 export default function App() {
     return (
-    <MyStack>
+        <MyStack>
 
-    </MyStack>
+        </MyStack>
     )
 }
 

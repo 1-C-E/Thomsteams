@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
@@ -17,23 +16,24 @@ export default function Main_page({navigation}) {
                                  style={{paddingHorizontal: 6}}
                                  imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
                     <Header_1/>
-                    <Input>Введите запрос</Input>
+                    <Input> Введите запрос </Input>
 
-                    <Articles_block style={{}}>
-                        <TouchableOpacity>
+                    <Articles_block>
+                        <TouchableOpacity onPress={() => navigation.navigate("Article_1")}>
                             <Image source={require('../assets/img-main-page/article_1.png')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("Article_2")}>
                             <Image source={require('../assets/img-main-page/article_2.png')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("Article_3")}>
                             <Image source={require('../assets/img-main-page/article_3.png')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
+
                     </Articles_block>
                 </ImageBackground>
 
@@ -43,8 +43,8 @@ export default function Main_page({navigation}) {
                                           style={{padding: 5}}>
                             <Image source={require('../assets/img-main-page/computer_table.png')}
                                    style={styles.furniture}/>
-                            <Name>Стол компьютерный УНО-75 белый</Name>
-                            <Price>7 856₽</Price>
+                            <Name> Стол компьютерный УНО-75 белый </Name>
+                            <Price> 7 856₽ </Price>
                         </TouchableOpacity>
                     </FlexCont>
 
@@ -53,8 +53,8 @@ export default function Main_page({navigation}) {
                                           style={{padding: 5}}>
                             <Image source={require('../assets/img-main-page/floor_cabinet.png')}
                                    style={styles.furniture}/>
-                            <Name>Стол натуральная сосновая древесина</Name>
-                            <Price>10 999₽</Price>
+                            <Name> Стол натуральная сосновая древесина </Name>
+                            <Price> 10 999₽ </Price>
                         </TouchableOpacity>
                     </FlexCont>
 
