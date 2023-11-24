@@ -17,7 +17,7 @@ export default function Profile_() {
 
 
                         <Photo_1 style={{marginTop: 10}}>
-                            <Image source={require('../assets/img-profile/0d7af050f7bc56a4079b4f77f3680cb3.jpg')}
+                            <Image source={require('../assets/img-profile/ava.png')}
                                    style={{width: 147, height: 147, borderRadius: 75}}/>
                         </Photo_1>
 
@@ -80,12 +80,12 @@ export default function Profile_() {
                             </TouchableOpacity>
 
                             <TouchableOpacity>
-                                <Image source={require('../assets/img-main-page/armchair.jpg')}
+                                <Image source={require('../assets/img-main-page/computer_table.png')}
                                        style={styles.article_image}></Image>
                             </TouchableOpacity>
 
                             <TouchableOpacity>
-                                <Image source={require('../assets/img-main-page/armchair.jpg')}
+                                <Image source={require('../assets/img-main-page/bed.jpg')}
                                        style={styles.article_image}></Image>
                             </TouchableOpacity>
                         </View>
