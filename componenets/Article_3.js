@@ -56,9 +56,10 @@ color: gray;
 
 `;
 const Info_text= styled.Text`
-margin-left: 10px;
-font-size: 16px;
-font-weight:500;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+
 `;
 const Center = styled.View`
   margin-left: auto;

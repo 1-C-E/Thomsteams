@@ -43,8 +43,8 @@ export default function Product_page_1({navigation}) {
 
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
-                            <Price> 7 856 рублей </Price>
-                            <Devilery> Доставим 15 ноября </Devilery>
+                            <Price> 7 599 рублей </Price>
+                            <Devilery> Доставим 4 декабря </Devilery>
                         </View>
 
                         <TouchableOpacity style={{marginTop: 10}}>
@@ -64,7 +64,7 @@ export default function Product_page_1({navigation}) {
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
 
-                    <Text style={{marginTop: 16}}> Компьютерный стол “Альфа” - идеальное решение для тех, кто ценит
+                    <Text style={{marginTop: 16, height: 'auto'}}> Компьютерный стол “Альфа” - идеальное решение для тех, кто ценит
                         комфорт и функциональность. Этот стол выполнен из высококачественных материалов, что
                         обеспечивает его прочность и долговечность. Особенности компьютерного стола “Альфа”: –
                         Просторное рабочее пространство позволяет разместить все необходимые аксессуары и оргтехнику.–
