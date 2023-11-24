@@ -44,7 +44,9 @@ export default function Product_page_3({navigation}) {
 
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
+
                             <Price> 7 856 рублей </Price>
+
                             <Devilery> Доставим 7 декабря </Devilery>
                         </View>
 

@@ -65,16 +65,6 @@ const First_Product_page = () => {
                 options={{headerShown: false}}/>
 
             <Stack.Screen
-                name="Header_white"
-                component={Header_1}
-                options={{headerShown: false}}/>
-
-            <Stack.Screen
-                name="Header_black"
-                component={Header_2}
-                options={{headerShown: false}}/>
-
-            <Stack.Screen
                 name="Basket"
                 component={Basket}
                 options={{headerShown: false}}/>

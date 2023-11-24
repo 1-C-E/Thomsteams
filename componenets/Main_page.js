@@ -38,17 +38,17 @@ export default function Main_page({navigation}) {
 
                     <Articles_block>
                         <TouchableOpacity onPress={() => navigation.navigate("Article_1")}>
-                            <Image source={require('../assets/img-main-page/article_1.png')}
+                            <Image source={require('../assets/state_photo/State_1/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => navigation.navigate("Article_2")}>
-                            <Image source={require('../assets/img-main-page/article_2.png')}
+                            <Image source={require('../assets/state_photo/State_2/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => navigation.navigate("Article_3")}>
-                            <Image source={require('../assets/img-main-page/article_3.png')}
+                            <Image source={require('../assets/state_photo/State_3/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
@@ -71,9 +71,11 @@ export default function Main_page({navigation}) {
                                           style={{padding: 5}}>
                             <Image source={require('../assets/img-main-page/floor_cabinet.png')}
                                    style={styles.furniture}/>
+
                             <Name> Шкаф напольный белый
                                 30*170*150 </Name>
                             <Price> 10 999₽ </Price>
+
                         </TouchableOpacity>
                     </FlexCont>
 
@@ -84,21 +86,24 @@ export default function Main_page({navigation}) {
                                           style={{padding: 5}}>
                             <Image source={require('../assets/img-main-page/wardrobe.png')}
                                    style={styles.furniture}/>
+
+
                             <Name>
                                 Шкаф для одежды FUN-5
                                 100*210*55
                             </Name>
                             <Price> 2 990₽ </Price>
+
                         </TouchableOpacity>
                     </FlexCont>
 
                     <FlexCont>
                         <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
                                           style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/armchair.jpg')}
+                            <Image source={require('../assets/img-main-page/krutoe_kreslo.jpg')}
                                    style={styles.furniture}/>
-                            <Name> Кресло кожанное премиум </Name>
-                            <Price> 19 149₽ </Price>
+                            <Name> Кресло мягкое оббитое </Name>
+                            <Price> 9 999 </Price>
                         </TouchableOpacity>
                     </FlexCont>
 
