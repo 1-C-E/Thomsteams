@@ -13,7 +13,7 @@ export default function Create_Page_1({navigation}){
 
             <TouchableOpacity onPress={Alertpress}>
             <Boxes>
-                <Nadpis>Генерация интерьера по фотографии</Nadpis>
+                <Nadpis>Генерация интерьера</Nadpis>
             </Boxes>
             </TouchableOpacity>
             <TouchableOpacity onPress={Alertpress}>
