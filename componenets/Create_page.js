@@ -1,6 +1,5 @@
 import React from "react";
-import {Image, TouchableOpacity, View, LinearGradient, Alert} from "react-native";
-import {View, LinearGradient} from "react-native";
+import {TouchableOpacity, View, LinearGradient, Alert} from "react-native";
 import {StatusBar} from 'expo-status-bar';
 import styled from 'styled-components'
 import Header from "./Header_2";
