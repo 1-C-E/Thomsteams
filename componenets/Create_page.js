@@ -1,5 +1,5 @@
 import React from "react";
-import {Image, TouchableOpacity, View, LinearGradient} from "react-native";
+import {View, LinearGradient} from "react-native";
 import {StatusBar} from 'expo-status-bar';
 import styled from 'styled-components'
 import Header from "./Header_2";
@@ -11,21 +11,20 @@ export default function Create_Page_1({navigation}){
             <Header/>
 
             <Boxes>
-                <Nadpis>Генерация интерьера по фотографии</Nadpis>
+                <Nadpis> Генерация интерьера по фотографии </Nadpis>
             </Boxes>
 
             <Boxes_cool>
-                <Nadpis>Нейросеть Thomsteams</Nadpis>
+                <Nadpis> Нейросеть Thomsteams </Nadpis>
             </Boxes_cool>
-            <Boxes>
-                <Nadpis>Песочница</Nadpis>
-            </Boxes>
 
+            <Boxes>
+                <Nadpis> Песочница </Nadpis>
+            </Boxes>
 
         </View>
     )
 }
-
 
 const Boxes = styled.View`
 margin: 20px 0 0 5px ;
