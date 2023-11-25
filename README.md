@@ -19,6 +19,10 @@ Files description:
 
 - creating an interior.apk - development that allows you to create your own interior design
 
+- video_1.mp4 - demonstration of AR technology
+
+- video_2.mp4 - interior generation
+
 --------------------------------------------------------------------------------------
 
 Figma:
