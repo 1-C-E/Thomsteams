@@ -21,6 +21,10 @@ Files description:
 
 --------------------------------------------------------------------------------------
 
+Figma:
+
+https://www.figma.com/file/ZUL15Vv0p7B39QaGwJzo3J/Thomsteams?type=design&node-id=0-1&mode=design&t=DF3JbykHLS47LPyN-0
+
 
 
 
