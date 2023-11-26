@@ -9,21 +9,20 @@ export default function Product_page_4({navigation}) {
         <View>
             <Header_2/>
             <ScrollView>
-                <ImageBackground source={require('../assets/img-main-page/computer_table.png')}
+                <ImageBackground source={require('../assets/img-main-page/krutoe_kreslo.jpg')}
                                  style={{marginTop: 10, height: 350}}
                                  imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
                 <Product_information>
-                    <Product_name> Стол компьютерный уно-75
-                        30*125*225 белый
+                    <Product_name> Кресло мягкое оббитое 
                     </Product_name>
 
                     <Feedback_block>
                         <Stars>
                             <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
-                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
-                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
                             <Image source={require('../assets/img-product-pages/start_gray.png')}/>
                         </Stars>
                         <Reviews> 215 отзывов </Reviews>
@@ -44,7 +43,7 @@ export default function Product_page_4({navigation}) {
 
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
-                            <Price> 7 856 рублей </Price>
+                            <Price> 9 999₽ рублей </Price>
                             <Devilery> Доставим 15 ноября </Devilery>
                         </View>
 
@@ -65,11 +64,7 @@ export default function Product_page_4({navigation}) {
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
 
-                    <Text style={{marginTop: 16, height: 'auto'}}> Компьютерный стол “Альфа” - идеальное решение для тех, кто ценит
-                        комфорт и функциональность. Этот стол выполнен из высококачественных материалов, что
-                        обеспечивает его прочность и долговечность. Особенности компьютерного стола “Альфа”: –
-                        Просторное рабочее пространство позволяет разместить все необходимые аксессуары и оргтехнику.–
-                        Вместительные ящики и полки обеспечивают хранение документов, книг и других предметов.
+                    <Text style={{marginTop: 16, height: 'auto'}}> Кресло мягкое премиум - это элегантное и удобное кресло, идеальное для оформления офиса или домашнего кабинета. Изготовленное из высококачественных материалов, оно обеспечивает комфорт и поддержку в течение всего рабочего дня. Регулируемая высота и угол наклона спинки позволяют настроить кресло под свои индивидуальные потребности, а мягкие подлокотники и устойчивое пятилучиевое основание с колесиками обеспечивают удобство использования. Стильный дизайн и премиум качество материалов делают это кресло идеальным выбором для тех, кто ценит комфорт и элегантность в своем рабочем пространстве.
                     </Text>
                 </Product_information>
             </ScrollView>

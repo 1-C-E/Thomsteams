@@ -1,10 +1,11 @@
 import React from "react";
-import {Image, ImageBackground, TouchableOpacity, View, ScrollView, Text, StyleSheet} from "react-native";
+import {Image, ImageBackground, TouchableOpacity, View, ScrollView, Text, StyleSheet, Alert} from "react-native";
 import styled from 'styled-components';
 import Header from "./Header_2";
 
 
 export default function Profile_() {
+    const thx = () => Alert.alert("Огромное спасибо!", "Мы рады, что смогли вас заинтересовать в продлении подписки, но пока мы не можем взымать финансы")
     return (
         <View style={{backgroundColor: 'white'}}>
             <Header/>
@@ -49,7 +50,7 @@ export default function Profile_() {
                             <To_change> изменить </To_change>
                         </View>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity  onPress={thx}>
                             <ImageBackground source={require('../assets/img-profile/place_an_order_2.png')}
                                              imageStyle={{borderRadius: 10}}
                                              style={{marginTop: 14, width: 'auto', height: 40}}>

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header_1 from "./Header_1";
 import Navigation from "../navigate";
 import Navigate from "../navigate";
+import { FurnitureBox } from './FlexCont';
 
 export default function Main_page({navigation}) {
     return (
@@ -38,17 +39,17 @@ export default function Main_page({navigation}) {
 
                     <Articles_block>
                         <TouchableOpacity onPress={() => navigation.navigate("Article_1")}>
-                            <Image source={require('../assets/img-main-page/article_1.png')}
+                            <Image source={require('../assets/state_photo/State_1/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => navigation.navigate("Article_2")}>
-                            <Image source={require('../assets/img-main-page/article_2.png')}
+                            <Image source={require('../assets/state_photo/State_2/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => navigation.navigate("Article_3")}>
-                            <Image source={require('../assets/img-main-page/article_3.png')}
+                            <Image source={require('../assets/state_photo/State_3/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
@@ -56,52 +57,11 @@ export default function Main_page({navigation}) {
                 </ImageBackground>
 
                 <FlexBox>
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/computer_table.png')}
-                                   style={styles.furniture}/>
-                            <Name> Стол компьютерный УНО-75 белый </Name>
-                            <Price> 7 599₽ </Price>
-                        </TouchableOpacity>
-                    </FlexCont>
-
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_2")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/floor_cabinet.png')}
-                                   style={styles.furniture}/>
-                            <Name> Шкаф напольный белый
-                                30*170*150 </Name>
-                            <Price> 10 999₽ </Price>
-                        </TouchableOpacity>
-                    </FlexCont>
-
-                    <Break/>
-
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_3")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/wardrobe.png')}
-                                   style={styles.furniture}/>
-                            <Name>
-                                Шкаф для одежды FUN-5
-                                100*210*55
-                            </Name>
-                            <Price> 2 990₽ </Price>
-                        </TouchableOpacity>
-                    </FlexCont>
-
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/armchair.jpg')}
-                                   style={styles.furniture}/>
-                            <Name> Кресло кожанное премиум </Name>
-                            <Price> 19 149₽ </Price>
-                        </TouchableOpacity>
-                    </FlexCont>
-
+                <FurnitureBox name = "Стол компьютерный УНО-75 белый" imgsrc = {require("../assets/img-main-page/computer_table.png")} price = "7 599₽" navigation={navigation} navigation_page="Product_page_1" /> 
+                <FurnitureBox name = "Шкаф напольный белый 30*170*150" imgsrc = {require('../assets/img-main-page/floor_cabinet.png')} price = "10 999₽" navigation={navigation} navigation_page="Product_page_2" /> 
+                <Break/>
+                <FurnitureBox name = "Шкаф для одежды FUN-5 100*210*55" imgsrc = {require('../assets/img-main-page/wardrobe.png')} price = "2 990₽" navigation={navigation} navigation_page="Product_page_3" />
+                <FurnitureBox name = "Кресло мягкое оббитое" imgsrc = {require('../assets/img-main-page/krutoe_kreslo.jpg')} price = "9 999₽" navigation={navigation} navigation_page="Product_page_4" />
                 </FlexBox>
             </ScrollView>
         </SafeAreaView>
