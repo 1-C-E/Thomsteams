@@ -1,40 +1,38 @@
 import React from "react";
 import {View, Image, ImageBackground, TouchableOpacity, Text, ScrollView} from 'react-native';
 import styled from 'styled-components'
-import Header_2 from "./Header_2";
+import Header_2 from "../../componenets/Header_2";
 
-
-export default function Product_page_2({navigation}) {
+export default function Product_page_4({navigation}) {
     return (
         <View>
             <Header_2/>
             <ScrollView>
-                <ImageBackground source={require('../assets/img-main-page/floor_cabinet.png')}
+                <ImageBackground source={require('../../assets/img-main-page/krutoe_kreslo.jpg')}
                                  style={{marginTop: 10, height: 350}}
                                  imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
                 <Product_information>
-                    <Product_name> Шкаф напольный белый
-                        30*170*150
+                    <Product_name> Кресло мягкое оббитое 
                     </Product_name>
 
                     <Feedback_block>
                         <Stars>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../../assets/img-product-pages/start_gray.png')}/>
                         </Stars>
-                        <Reviews> 8 отзывов </Reviews>
-                        <Questions> 7 вопросов </Questions>
+                        <Reviews> 215 отзывов </Reviews>
+                        <Questions> 78 вопросов </Questions>
                     </Feedback_block>
 
                     <View>
                         <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
 
                             <Camera>
-                                <Image source={require('../assets/img-product-pages/camera.png')}
+                                <Image source={require('../../assets/img-product-pages/camera.png')}
                                        style={{width: 30, height: 30, marginLeft: 'auto'}}/>
                                 <Text style={{fontSize: 22, fontWeight: 500, marginRight: 'auto'}}> Опробовать </Text>
                             </Camera>
@@ -44,13 +42,13 @@ export default function Product_page_2({navigation}) {
 
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
-                            <Price> 2 950 рублей </Price>
-                            <Devilery> Доставим  10 декабря </Devilery>
+                            <Price> 9 999₽ рублей </Price>
+                            <Devilery> Доставим 15 ноября </Devilery>
                         </View>
 
                         <TouchableOpacity style={{marginTop: 10}}>
 
-                            <ImageBackground source={require('../assets/img-product-pages/place_an_order.png')}
+                            <ImageBackground source={require('../../assets/img-product-pages/place_an_order.png')}
                                              imageStyle={{borderRadius: 10, height: 40}}>
 
                                 <Place_an_order> Оформить заказ </Place_an_order>
@@ -65,15 +63,8 @@ export default function Product_page_2({navigation}) {
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
 
-                    <Text style={{marginTop: 16, height: 'auto'}}>
-                        Название продукта: Напольный шкаф
-                        Описание продукта:
-                        Представляем вам стильный и функциональный напольный шкаф, который станет идеальным решением для организации пространства и хранения ваших вещей. Этот шкаф прекрасно подойдет для любого интерьера, будь то спальня, гостиная или прихожая.
+                    <Text style={{marginTop: 16, height: 'auto'}}> Кресло мягкое премиум - это элегантное и удобное кресло, идеальное для оформления офиса или домашнего кабинета. Изготовленное из высококачественных материалов, оно обеспечивает комфорт и поддержку в течение всего рабочего дня. Регулируемая высота и угол наклона спинки позволяют настроить кресло под свои индивидуальные потребности, а мягкие подлокотники и устойчивое пятилучиевое основание с колесиками обеспечивают удобство использования. Стильный дизайн и премиум качество материалов делают это кресло идеальным выбором для тех, кто ценит комфорт и элегантность в своем рабочем пространстве.
 
-                        Особенности продукта:
-                        Прочность и долговечность: изготовлен из высококачественных материалов, обеспечивающих долговечность и надежность шкафа.
-                        Стильный дизайн: современный и минималистичный дизайн, который будет гармонично сочетаться с любым интерьером.
-                        Вместительность: благодаря своей конструкции, шкаф предлагает достаточно места для хранения одежды, обуви, аксессуаров и других предметов.
                     </Text>
                 </Product_information>
             </ScrollView>
