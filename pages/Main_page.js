@@ -1,9 +1,6 @@
 import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
-import Header_1 from "./Header_1";
-import Navigation from "../navigate";
-import Navigate from "../navigate";
 
 export default function Main_page({navigation}) {
     return (
@@ -19,14 +16,14 @@ export default function Main_page({navigation}) {
                 <Thoms> thoms </Thoms>
 
                 <Navbar>
-                    <TouchableOpacity onPress={() => navigation.navigate("Basket")}
+                    <TouchableOpacity onPress={() => navigation.navigate("Basket_page")}
                                     style={{marginLeft: 16}}>
                         <Image source={require('../assets/img-upper-navbar/basket_white.png')}
                             style={{width: 21, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
                         <Nav_element> Корзина </Nav_element>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Favorites")}
+                    <TouchableOpacity onPress={() => navigation.navigate("Favorites_page")}
                                     style={{marginLeft: 16}}>
                         <Image source={require('../assets/img-upper-navbar/favorites_white.png')}
                             style={{width: 23, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
@@ -37,17 +34,17 @@ export default function Main_page({navigation}) {
                     <Input type="text" placeholder="Введите запрос"/>
 
                     <Articles_block>
-                        <TouchableOpacity onPress={() => navigation.navigate("Article_1")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Article_page_1")}>
                             <Image source={require('../assets/state_photo/State_1/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate("Article_2")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Article_page_2")}>
                             <Image source={require('../assets/state_photo/State_2/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate("Article_3")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Article_page_3")}>
                             <Image source={require('../assets/state_photo/State_3/photo_1.jpg')}
                                    style={styles.article_image}/>
                         </TouchableOpacity>
@@ -177,25 +174,11 @@ const Price = styled.Text`
 const Break = styled.View`
   flex-basis: 100%;
   height: 17px;
-`
-
-const Lower_Nav = styled.View`
-  width: 350px;
-  height: 50px;
-  border: 1px solid #CCC;
-  border-radius: 14px;
-  background: #FFF;
-  backdrop-filter: blur(12px);
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-around;
-  flex-direction: row
 `;
 
 const Head = styled.View`
   flex-direction: row;
   margin: 20px 14px 100px 14px;
-
 `;
 
 const Thoms = styled.Text`

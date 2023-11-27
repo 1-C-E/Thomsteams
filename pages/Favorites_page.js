@@ -1,8 +1,8 @@
 import {Text, View} from 'react-native';
 import styled from 'styled-components';
-import Header_2 from "./Header_2";
+import Header_2 from "../componenets/Header_2";
 
-export default function Favorites () {
+export default function Favorites_pages () {
     return (
         <View>
             <Header_2/>

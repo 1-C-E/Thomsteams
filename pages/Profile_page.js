@@ -1,13 +1,11 @@
 import React from "react";
 import {Image, ImageBackground, TouchableOpacity, View, ScrollView, Text, StyleSheet, Alert} from "react-native";
 import styled from 'styled-components';
-import Header from "./Header_2";
+import Header from "../componenets/Header_2";
 
-
-export default function Profile_() {
-const thx = () => Alert.alert("Огромное спасибо!", "Мы рады, что смогли вас заинтересовать в продлении подписки, но пока мы не можем взымать финансы")
+export default function Profile_page() {
+    const thx = () => Alert.alert("Огромное спасибо!", "Мы рады, что смогли вас заинтересовать в продлении подписки, но пока мы не можем взымать финансы")
     return (
-
         <View style={{backgroundColor: 'white'}}>
             <Header/>
             <ScrollView>
@@ -29,9 +27,7 @@ const thx = () => Alert.alert("Огромное спасибо!", "Мы рады
 
                         <Name style={{marginTop: 10}}> Александр Наумов </Name>
 
-
                     </ImageBackground>
-
 
                     <Profile_block style={{marginTop: 10}}>
                         <View style={{flexDirection: 'row'}}>
@@ -165,7 +161,7 @@ const Profile_block = styled.View`
 const Text_in_prof_block = styled.Text`
   font-size: 12px;
   font-weight: 600;
-`
+`;
 
 const To_change = styled.Text`
   margin-left: auto;

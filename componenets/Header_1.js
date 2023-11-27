@@ -8,7 +8,7 @@ export default function Header_1({navigation}) {
             <Thoms> thoms </Thoms>
 
             <Navbar>
-                <TouchableOpacity onPress={() => navigation.navigate("Basket")}
+                <TouchableOpacity onPress={() => navigation.navigate("Basket_page")}
                                   style={{marginLeft: 16}}>
                     <Image source={require('../assets/img-upper-navbar/basket_white.png')}
                            style={{width: 21, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
@@ -29,7 +29,6 @@ export default function Header_1({navigation}) {
 const Head = styled.View`
   flex-direction: row;
   margin: 20px 14px 100px 14px;
-
 `;
 
 const Thoms = styled.Text`
@@ -42,7 +41,6 @@ const Navbar = styled.View`
   flex-direction: row;
   margin-left: auto;
   margin-top: 12px;
-
 `;
 
 const Nav_element = styled.Text`

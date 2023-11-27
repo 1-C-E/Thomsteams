@@ -1,40 +1,39 @@
 import React from "react";
-import {View, Image, ImageBackground, TouchableOpacity, Text, ScrollView} from 'react-native';
+import {View, Text, Image, ImageBackground, TouchableOpacity, ScrollView} from 'react-native';
 import styled from 'styled-components'
-import Header_2 from "./Header_2";
+import Header_2 from "../../componenets/Header_2";
 
-export default function Product_page_3({navigation}) {
+export default function Product_page_1({navigation}) {
     return (
         <View>
             <Header_2/>
             <ScrollView>
-                <ImageBackground source={require('../assets/img-main-page/wardrobe.png')}
+                <ImageBackground source={require('../../assets/img-main-page/computer_table.png')}
                                  style={{marginTop: 10, height: 350}}
                                  imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
                 <Product_information>
-                    <Product_name>
-                        Шкаф для одежды FUN-5
-                        100*210*55
+                    <Product_name> Стол компьютерный уно-75
+                        30*125*225 белый
                     </Product_name>
 
                     <Feedback_block>
                         <Stars>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
-                            <Image source={require('../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../../assets/img-product-pages/star_yellow.png')}/>
+                            <Image source={require('../../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../../assets/img-product-pages/start_gray.png')}/>
+                            <Image source={require('../../assets/img-product-pages/start_gray.png')}/>
                         </Stars>
-                        <Reviews> 3 отзывов </Reviews>
-                        <Questions> 5 вопросов </Questions>
+                        <Reviews> 215 отзывов </Reviews>
+                        <Questions> 78 вопросов </Questions>
                     </Feedback_block>
 
                     <View>
                         <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
 
                             <Camera>
-                                <Image source={require('../assets/img-product-pages/camera.png')}
+                                <Image source={require('../../assets/img-product-pages/camera.png')}
                                        style={{width: 30, height: 30, marginLeft: 'auto'}}/>
                                 <Text style={{fontSize: 22, fontWeight: 500, marginRight: 'auto'}}> Опробовать </Text>
                             </Camera>
@@ -44,15 +43,13 @@ export default function Product_page_3({navigation}) {
 
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
-
-                            <Price> 7 856 рублей </Price>
-
-                            <Devilery> Доставим 7 декабря </Devilery>
+                            <Price> 7 599 рублей </Price>
+                            <Devilery> Доставим 4 декабря </Devilery>
                         </View>
 
                         <TouchableOpacity style={{marginTop: 10}}>
 
-                            <ImageBackground source={require('../assets/img-product-pages/place_an_order.png')}
+                            <ImageBackground source={require('../../assets/img-product-pages/place_an_order.png')}
                                              imageStyle={{borderRadius: 10, height: 40}}>
 
                                 <Place_an_order> Оформить заказ </Place_an_order>
@@ -67,13 +64,11 @@ export default function Product_page_3({navigation}) {
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
 
-                    <Text style={{marginTop: 16, height: 'auto'}}>
-                        Представляем вашему вниманию стильный и практичный шкаф для одежды, который станет отличным решением для хранения ваших вещей и украшения интерьера. Этот шкаф идеально подойдет для любой комнаты, будь то спальня, детская или прихожая.
-
-                        Особенности продукта:
-                        Прочность и долговечность - изготовлен из качественных материалов и имеет надежную конструкцию, которая гарантирует долговечность и стабильность.
-                        Стильный дизайн - современный внешний вид и минималистичная форма, которые идеально впишутся в любой интерьер.
-                        Вместимость - большое количество полок и отделений для хранения всей вашей одежды, а также аксессуаров и обуви.
+                    <Text style={{marginTop: 16, height: 'auto'}}> Компьютерный стол “Альфа” - идеальное решение для тех, кто ценит
+                        комфорт и функциональность. Этот стол выполнен из высококачественных материалов, что
+                        обеспечивает его прочность и долговечность. Особенности компьютерного стола “Альфа”: –
+                        Просторное рабочее пространство позволяет разместить все необходимые аксессуары и оргтехнику.–
+                        Вместительные ящики и полки обеспечивают хранение документов, книг и других предметов.
                     </Text>
                 </Product_information>
             </ScrollView>
