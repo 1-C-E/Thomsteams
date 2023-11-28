@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Text, View, FlatList, ImageBackground} from 'react-native';
 import styled from 'styled-components';
 import Header_2 from "../componenets/Header_2";
+import Basket_component from "../componenets/Basket_component";
 
 export default function Basket_page() {
     const [listOfItems, setListOfItems] = useState([
@@ -18,7 +19,7 @@ export default function Basket_page() {
                 <Text style={{textAlign: 'center', marginTop: 100, fontSize: 35}}> Корзина </Text>
 
                 <FlatList data={listOfItems} renderItem={({item}) => (
-                    <Text>{item.text}</Text>
+                   <Basket_component el={item}/>
                 )}/>
             </ImageBackground>
         </View>
