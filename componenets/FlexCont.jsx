@@ -19,14 +19,6 @@ const Name = styled.Text`
   font-weight: 500;
 `;
 const styles = StyleSheet.create({
-    article_image: {
-        width: 81,
-        height: 115,
-        borderColor: '#FFF',
-        borderWidth: 2,
-        borderRadius: 15
-    },
-
     furniture: {
         width: 'auto',
         height: 90,

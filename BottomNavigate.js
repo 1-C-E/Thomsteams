@@ -21,25 +21,25 @@ export default function MyStack() {
 
                     if (rn === Main_Name) {
                         return <Image source={require('./assets/img-lower-navbar/home.png')}
-                                      style={{width: 28, height: 28}}/>
+                                    style={{width: 28, height: 28}}/>
                     } else if (rn === User) {
                         return <Image source={require('./assets/img-lower-navbar/user.png')}
-                                      style={{width: 28, height: 28}}/>
+                                    style={{width: 28, height: 28}}/>
                     } else if (rn === Create) {
                         return <Image source={require('./assets/img-lower-navbar/plus.png')}
-                                      style={{width: 28, height: 28}}/>
+                                    style={{width: 28, height: 28}}/>
                     }
                 }
             })}>
 
                 <Stack.Screen options={{headerShown: false}}
-                              name={Main_Name} component={First_Product_page}/>
+                            name={Main_Name} component={First_Product_page}/>
 
                 <Stack.Screen options={{headerShown: false}}
-                              name={Create} component={Create_Page_1}/>
+                            name={Create} component={Create_Page_1}/>
 
                 <Stack.Screen options={{headerShown: false}}
-                              name={User} component={Profile_}/>
+                            name={User} component={Profile_}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

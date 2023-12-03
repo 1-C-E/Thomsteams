@@ -1,12 +1,28 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {StatusBar} from 'expo-status-bar';
+import { Routes } from 'react-router-dom'
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
 import Header_1 from "./Header_1";
 import Navigation from "../navigate";
 import Navigate from "../navigate";
 import { FurnitureBox } from './FlexCont';
+import { fetchFurniture } from '../redux/slices/furniture';
 
 export default function Main_page({navigation}) {
+    const dbTest = true
+    const dispatch = useDispatch()
+    const furniture = useSelector((state) => state.furniture.furniture)
+
+    const isFurnitureLoading = furniture.status == 'loading'
+
+    React.useEffect(() => {
+      dispatch(fetchFurniture())
+    }, [])
+
+    console.log(furniture.items.map((obj, index) => console.log(obj)))
+
     return (
         <SafeAreaView>
 
@@ -57,11 +73,21 @@ export default function Main_page({navigation}) {
                 </ImageBackground>
 
                 <FlexBox>
-                <FurnitureBox name = "Стол компьютерный УНО-75 белый" imgsrc = {require("../assets/img-main-page/computer_table.png")} price = "7 599₽" navigation={navigation} navigation_page="Product_page_1" /> 
-                <FurnitureBox name = "Шкаф напольный белый 30*170*150" imgsrc = {require('../assets/img-main-page/floor_cabinet.png')} price = "10 999₽" navigation={navigation} navigation_page="Product_page_2" /> 
-                <Break/>
-                <FurnitureBox name = "Шкаф для одежды FUN-5 100*210*55" imgsrc = {require('../assets/img-main-page/wardrobe.png')} price = "2 990₽" navigation={navigation} navigation_page="Product_page_3" />
-                <FurnitureBox name = "Кресло мягкое оббитое" imgsrc = {require('../assets/img-main-page/krutoe_kreslo.jpg')} price = "9 999₽" navigation={navigation} navigation_page="Product_page_4" />
+             
+                {
+                  dbTest ? (isFurnitureLoading ? null : furniture.items.map((obj, index) =>
+                    (
+                      <FurnitureBox
+                      key = {obj._id}
+                      name = {obj.name}
+                      price = {obj.price + "₽"}
+                      imgsrc = {require("../assets/img-main-page/computer_table.png")}
+                      navigation={navigation} 
+                      navigation_page="Product_page_1"
+                      />
+                    )
+                  )) : (<FurnitureBox name = "Стол компьютерный УНО-75 белый" imgsrc = {require("../assets/img-main-page/computer_table.png")} price = "7 599₽" navigation={navigation} navigation_page="Product_page_1" />)
+                }
                 </FlexBox>
             </ScrollView>
         </SafeAreaView>
