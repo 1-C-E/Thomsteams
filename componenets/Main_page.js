@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {StatusBar} from 'expo-status-bar';
-import { Routes } from 'react-router-dom'
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
 import Header_1 from "./Header_1";
