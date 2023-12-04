@@ -1,9 +1,24 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
-import {products} from "../componenets/data";
+import { FurnitureBox } from '../componenets/FlexCont';
+import { fetchFurniture } from '../redux/slices/furniture';
 
 export default function Main_page({navigation}) {
+    const dbTest = false
+    const dispatch = useDispatch()
+    const furniture = useSelector((state) => state.furniture.furniture)
+
+    const isFurnitureLoading = furniture.status == 'loading'
+
+    React.useEffect(() => {
+      dispatch(fetchFurniture())
+    }, [])
+
+    console.log(furniture.items.map((obj, index) => console.log(obj)))
+
     return (
         <SafeAreaView>
 
@@ -54,20 +69,21 @@ export default function Main_page({navigation}) {
                 </ImageBackground>
 
                 <FlexBox>
-                    {products.map(product => (
-                        <FlexCont>
-                            <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
-                                              style={{padding: 5}}>
-
-                                <Image source={product.image}
-                                       style={styles.furniture}/>
-
-                                <Name> {product.name} </Name>
-
-                                <Price> {product.price} </Price>
-                            </TouchableOpacity>
-                        </FlexCont>
-                    ))}
+             
+                {
+                  dbTest ? (isFurnitureLoading ? null : furniture.items.map((obj, index) =>
+                    (
+                      <FurnitureBox
+                      key = {obj._id}
+                      name = {obj.name}
+                      price = {obj.price + "₽"}
+                      imgsrc = {require("../assets/img-main-page/computer_table.png")}
+                      navigation={navigation} 
+                      navigation_page="Product_page_1"
+                      />
+                    )
+                  )) : (<FurnitureBox name = "Стол компьютерный УНО-75 белый" imgsrc = {require("../assets/img-main-page/computer_table.png")} price = "7 599₽" navigation={navigation} navigation_page="Product_page_1" />)
+                }
                 </FlexBox>
             </ScrollView>
         </SafeAreaView>
