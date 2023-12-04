@@ -1,6 +1,7 @@
 import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
+import {products} from "../componenets/data";
 
 export default function Main_page({navigation}) {
     return (
@@ -53,57 +54,17 @@ export default function Main_page({navigation}) {
                 </ImageBackground>
 
                 <FlexBox>
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/computer_table.png')}
-                                   style={styles.furniture}/>
-                            <Name> Стол компьютерный УНО-75 белый </Name>
-                            <Price> 7 599₽ </Price>
-                        </TouchableOpacity>
-                    </FlexCont>
-
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_2")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/floor_cabinet.png')}
-                                   style={styles.furniture}/>
-
-                            <Name> Шкаф напольный белый
-                                30*170*150 </Name>
-                            <Price> 10 999₽ </Price>
-
-                        </TouchableOpacity>
-                    </FlexCont>
-
-                    <Break/>
-
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_3")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/wardrobe.png')}
-                                   style={styles.furniture}/>
-
-
-                            <Name>
-                                Шкаф для одежды FUN-5
-                                100*210*55
-                            </Name>
-                            <Price> 2 990₽ </Price>
-
-                        </TouchableOpacity>
-                    </FlexCont>
-
-                    <FlexCont>
-                        <TouchableOpacity onPress={() => navigation.navigate("Product_page_4")}
-                                          style={{padding: 5}}>
-                            <Image source={require('../assets/img-main-page/krutoe_kreslo.jpg')}
-                                   style={styles.furniture}/>
-                            <Name> Кресло мягкое оббитое </Name>
-                            <Price> 9 999 </Price>
-                        </TouchableOpacity>
-                    </FlexCont>
-
+                    {products.map(product => (
+                        <FlexCont>
+                            <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
+                                              style={{padding: 5}}>
+                                <Image source={require('../assets/img-main-page/computer_table.png')}
+                                       style={styles.furniture}/>
+                                <Name> {product.name} </Name>
+                                <Price> {product.price} </Price>
+                            </TouchableOpacity>
+                        </FlexCont>
+                    ))}
                 </FlexBox>
             </ScrollView>
         </SafeAreaView>
@@ -153,6 +114,7 @@ const Input = styled.TextInput`
 `;
 
 const FlexCont = styled.View`
+  margin: 0 0 10px 0;
   width: 150px;
   height: 160px;
   border-radius: 14px;
