@@ -58,9 +58,12 @@ export default function Main_page({navigation}) {
                         <FlexCont>
                             <TouchableOpacity onPress={() => navigation.navigate("Product_page_1")}
                                               style={{padding: 5}}>
-                                <Image source={require('../assets/img-main-page/computer_table.png')}
+
+                                <Image source={product.image}
                                        style={styles.furniture}/>
+
                                 <Name> {product.name} </Name>
+
                                 <Price> {product.price} </Price>
                             </TouchableOpacity>
                         </FlexCont>
