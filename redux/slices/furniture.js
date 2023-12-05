@@ -2,12 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchFurniture = createAsyncThunk('furniture/fetchFurniture', async () => {
-    const {data} = await axios.get('https://5760-89-188-176-148.ngrok-free.app/furniture', {
-        headers:
-        {
-            "ngrok-skip-browser-warning": "1"
-        }
-    })
+    
+    const {data} = await axios.get('https://24c4-89-188-176-148.ngrok-free.app/furniture')
     return data
 })
 

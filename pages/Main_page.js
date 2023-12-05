@@ -5,9 +5,10 @@ import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, Scro
 import styled from 'styled-components';
 import { FurnitureBox } from '../componenets/FlexCont';
 import { fetchFurniture } from '../redux/slices/furniture';
+import { createAccount } from '../redux/slices/account';
 
 export default function Main_page({navigation}) {
-    const dbTest = false
+    const dbTest = true
     const dispatch = useDispatch()
     const furniture = useSelector((state) => state.furniture.furniture)
 
