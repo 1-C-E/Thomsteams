@@ -14,7 +14,7 @@ export default function Basket_page() {
 
     return (
         <View>
-            <Header_2/>
+
             <ImageBackground source={require('../assets/img-upper-navbar/basket-gradient.png')}>
                 <Text style={{textAlign: 'center', marginTop: 100, fontSize: 35}}> Корзина </Text>
 

@@ -1,20 +1,24 @@
 import React from "react";
 import {Image, TouchableOpacity} from "react-native";
 import styled from 'styled-components'
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header({navigation}) {
+export default function Header() {
+  const navigation = useNavigation() 
     return (
-        <Head>
+      <Head style={{marginTop:30}}>
             <Thoms> thoms </Thoms>
 
             <Navbar>
-                <TouchableOpacity style={{marginLeft: 16}}>
+                <TouchableOpacity onPress={() => navigation.navigate("Basket_page")}
+                                  style={{marginLeft: 16}}>
                     <Image source={require('../assets/img-upper-navbar/basket_black.png')}
                            style={{width: 21, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
                     <Nav_element> Корзина </Nav_element>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{marginLeft: 16}}>
+                <TouchableOpacity onPress={() => navigation.navigate("Favorites_page")}
+                                  style={{marginLeft: 16}}>
                     <Image source={require('../assets/img-upper-navbar/favorites_black.png')}
                            style={{width: 23, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
                     <Nav_element> Избранное </Nav_element>

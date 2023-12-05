@@ -5,7 +5,6 @@ import Main_page from "./pages/Main_page";
 import Article_page_1 from "./pages/article_pages/Article_page_1";
 import Article_page_2 from "./pages/article_pages/Article_page_2";
 import Article_page_3 from "./pages/article_pages/Article_page_3";
-
 import Product_page_1 from "./pages/product_pages/Product_page_1";
 import Product_page_2 from "./pages/product_pages/Product_page_2";
 import Product_page_3 from "./pages/product_pages/Product_page_3";
