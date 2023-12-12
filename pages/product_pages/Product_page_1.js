@@ -1,9 +1,26 @@
 import React from "react";
-import {View, Text, Image, ImageBackground, TouchableOpacity, ScrollView} from 'react-native';
+import { useCallback, useState } from "react";
+import {View, Text, Image, ImageBackground, TouchableOpacity, ScrollView, ActivityIndicator, RefreshControl} from 'react-native';
 import styled from 'styled-components'
 import Header_2 from "../../componenets/Header_2";
+import Basket_page from "../Basket_page";
 
-export default function Product_page_1({navigation}) {
+const tabs = ["Description", "Characteristics"];
+const Product_page_1 = ({navigation}) => {
+
+    const [activeTab, setActiveTab] = useState(tabs[0]);
+
+   /* const description_characteristics = () => {
+        swith(activeTab)
+        {
+            case "Description":
+                return (
+                    <Basket_page/>
+                );
+
+        }
+    };*/
+
     return (
         <View>
             <Header_2/>
@@ -13,7 +30,7 @@ export default function Product_page_1({navigation}) {
                                  imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}/>
 
                 <Product_information>
-                    <Product_name> Кресло мягкое оббитое 
+                    <Product_name> Кресло мягкое оббитоеi
                     </Product_name>
 
                     <Feedback_block>
@@ -58,10 +75,16 @@ export default function Product_page_1({navigation}) {
                         </TouchableOpacity>
                     </Offer_block>
 
-                    <View style={{flexDirection: 'row', marginTop: 12}}>
+                    <View style={{flexDirection: 'row', marginTop: 12}}
+                          tabs={tabs}
+                          activeTab={activeTab}
+                          setActiveTab={setActiveTab}/>
+                   {/* {description_characteristics()}*/}
+
+                    {/*<View style={{flexDirection: 'row', marginTop: 12}}>
                         <Text style={{fontSize: 22, fontWeight: 600}}> Описание </Text>
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
-                    </View>
+                    </View>*/}
 
                     <Text style={{marginTop: 16, height: 'auto'}}> Кресло мягкое премиум - это элегантное и удобное кресло, идеальное для оформления офиса или домашнего кабинета. Изготовленное из высококачественных материалов, оно обеспечивает комфорт и поддержку в течение всего рабочего дня. Регулируемая высота и угол наклона спинки позволяют настроить кресло под свои индивидуальные потребности, а мягкие подлокотники и устойчивое пятилучиевое основание с колесиками обеспечивают удобство использования. Стильный дизайн и премиум качество материалов делают это кресло идеальным выбором для тех, кто ценит комфорт и элегантность в своем рабочем пространстве.
                     </Text>
@@ -140,3 +163,5 @@ const Camera = styled.View`
   height: 52px;
   border-radius: 20px;
 `;
+
+export default Product_page_1;
