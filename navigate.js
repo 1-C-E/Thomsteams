@@ -5,17 +5,17 @@ import Main_page from "./pages/Main_page";
 import Article_page_1 from "./pages/article_pages/Article_page_1";
 import Article_page_2 from "./pages/article_pages/Article_page_2";
 import Article_page_3 from "./pages/article_pages/Article_page_3";
-import Product_page_1 from "./pages/product_pages/Product_page_1";
-import Product_page_2 from "./pages/product_pages/Product_page_2";
-import Product_page_3 from "./pages/product_pages/Product_page_3";
-import Product_page_4 from "./pages/product_pages/Product_page_4";
+import Product_page from "./pages/product_pages/Product_page";
 import Basket_page from "./pages/Basket_page";
 import Favorites_page from "./pages/Favorites_page";
 import Camera_1 from "./componenets/Camera";
+import LogIn from "./pages/profile_page/LogIn";
+import SignIn from "./pages/profile_page/SignIn";
+import Profile from "./pages/profile_page/Profile";
 
 const Stack = createStackNavigator();
 
-const First_Product_page = () => {
+export function First_Product_page(){
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -24,25 +24,9 @@ const First_Product_page = () => {
                 options={{headerShown: false}}/>
 
             <Stack.Screen
-                name="Product_page_1"
-                component={Product_page_1}
+                name="Product_page"
+                component={Product_page}
                 options={{headerShown: false}}/>
-
-            <Stack.Screen
-                name="Product_page_2"
-                component={Product_page_2}
-                options={{headerShown: false}}/>
-
-            <Stack.Screen
-                name="Product_page_3"
-                component={Product_page_3}
-                options={{headerShown: false}}/>
-
-            <Stack.Screen
-                name="Product_page_4"
-                component={Product_page_4}
-                options={{headerShown: false}}/>
-
             <Stack.Screen
                 name="Camera"
                 component={Camera_1}
@@ -52,7 +36,7 @@ const First_Product_page = () => {
                 name="Article_page_1"
                 component={Article_page_1}
                 options={{headerShown: false}}/>
-
+                
             <Stack.Screen
                 name="Article_page_2"
                 component={Article_page_2}
@@ -76,5 +60,23 @@ const First_Product_page = () => {
         </Stack.Navigator>
     )
 }
+export function Profile_Page() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="NotLogedIn"
+                component={Profile}
+                options={{headerShown: false}}/>
+            <Stack.Screen
+                name="LogIn"
+                component={LogIn}
+                options={{headerShown: false}}/>
+            <Stack.Screen
+                name="SignIn"
+                component={SignIn}
+                options={{headerShown: false}}/>
 
-export {First_Product_page}
+        </Stack.Navigator>
+    )
+}
+

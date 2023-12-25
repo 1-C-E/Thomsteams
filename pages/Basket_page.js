@@ -5,6 +5,7 @@ import Header_2 from "../componenets/Header_2";
 import Basket_component from "../componenets/Basket_component";
 
 export default function Basket_page() {
+    
     const [listOfItems, setListOfItems] = useState([
         {text: 'стул', index: 1},
         {text: 'шкаф', index: 1},

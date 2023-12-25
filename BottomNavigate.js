@@ -2,9 +2,8 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
-import Profile_page from './pages/Profile_page';
 import Create_Page_1 from './pages/Create_page';
-import {First_Product_page} from './navigate';
+import {First_Product_page, Profile_Page} from './navigate';
 
 const Main_Name = "Магазин";
 const User = "Профиль";
@@ -38,7 +37,7 @@ export default function MyStack() {
                             name={Create} component={Create_Page_1}/>
 
                 <Stack.Screen options={{headerShown: false}}
-                              name={User} component={Profile_page}/>
+                              name={User} component={Profile_Page}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

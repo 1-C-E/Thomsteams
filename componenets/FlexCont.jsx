@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import Navigation from "../navigate";
+import { url } from '../dbUrl';
 
 const FlexContView = styled.View`
   width: 150px;
@@ -26,13 +27,20 @@ const styles = StyleSheet.create({
     }
 });
 
-export const FurnitureBox = ({name, price, imgsrc, navigation, navigation_page}) =>
+export const FurnitureBox = ({name, price, imgsrc, navigation, furnitureId, description, additionalImages}) =>
 {
     return(
     <FlexContView>
-        <TouchableOpacity onPress={() => navigation.navigate(navigation_page)}
+        <TouchableOpacity onPress={() => navigation.navigate("Product_page", {
+          furnitureId: furnitureId,
+          name: name,
+          price: price,
+          imageUrl: imgsrc,
+          description: description,
+          additionalImages: additionalImages
+        })}
                         style={{padding: 5}}>
-            <Image source={imgsrc}
+            <Image source={imgsrc == "1" ? '' : {uri: url + "/uploads/" + imgsrc}}
                 style={styles.furniture}/>
             <Name> {name} </Name>
             <Price> {price} </Price>
