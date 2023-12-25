@@ -1,10 +1,13 @@
-import React from "react";
+import * as React from "react";
 import {Image, TouchableOpacity} from "react-native";
-import styled from 'styled-components'
 
-export default function Header_1({navigation}) {
+import styled from 'styled-components'
+import { useNavigation } from '@react-navigation/native';
+
+export default function Header_1() {
+    const navigation = useNavigation() 
     return (
-        <Head>
+        <Head style={{marginTop:30}}>
             <Thoms> thoms </Thoms>
 
             <Navbar>
@@ -15,7 +18,7 @@ export default function Header_1({navigation}) {
                     <Nav_element> Корзина </Nav_element>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate("Favorites")}
+                <TouchableOpacity onPress={() => navigation.navigate("Favorites_page")}
                                   style={{marginLeft: 16}}>
                     <Image source={require('../assets/img-upper-navbar/favorites_white.png')}
                            style={{width: 23, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
@@ -25,6 +28,7 @@ export default function Header_1({navigation}) {
         </Head>
     );
 }
+
 
 const Head = styled.View`
   flex-direction: row;
