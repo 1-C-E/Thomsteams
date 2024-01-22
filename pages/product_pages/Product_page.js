@@ -25,10 +25,8 @@ export default function Product_page({navigation, route}) {
 
     allFavorites = useSelector((state) => state.account.favorites)
     isInFavorites = allFavorites.includes(furnitureId)
-    console.log(isInFavorites)
     acID = useSelector((state) => state.account.accountID)
     loginToken = useSelector((state) => state.account.loginToken)
-    console.log(loginToken)
     const updateFavorites = () => {
       if(acID != null && allFavorites != null)
       {
@@ -135,13 +133,8 @@ export default function Product_page({navigation, route}) {
                         <Text style={{fontSize: 22, fontWeight: 600}}> Описание </Text>
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
-                    {isFurnitureLoading ? 
-                    <Text style={{marginTop: 16, height: 'auto'}}> Кресло мягкое премиум - это элегантное и удобное кресло, идеальное для оформления офиса или домашнего кабинета. Изготовленное из высококачественных материалов, оно обеспечивает комфорт и поддержку в течение всего рабочего дня. Регулируемая высота и угол наклона спинки позволяют настроить кресло под свои индивидуальные потребности, а мягкие подлокотники и устойчивое пятилучиевое основание с колесиками обеспечивают удобство использования. Стильный дизайн и премиум качество материалов делают это кресло идеальным выбором для тех, кто ценит комфорт и элегантность в своем рабочем пространстве.
-                    </Text> : (
                       <Text style={{marginTop: 16, height: 'auto'}}>{description}</Text>
-                    )
 
-                    }
                     
                 </Product_information>
             </ScrollView>

@@ -19,19 +19,16 @@ const furnitureSlice = createSlice({
     name: 'furniture',
     initialState,
     reducers: {},
-    extraReducers: {
-        [fetchFurniture.pending]: (state) => {
+    extraReducers: (builder) => {
+        builder
+        .addCase(fetchFurniture.pending, (state) =>{
             state.furniture.items = []
             state.furniture.status = 'loading'
-        },
-        [fetchFurniture.fulfilled]: (state, action) => {
+        })
+        .addCase(fetchFurniture.fulfilled, (state, action) =>{
             state.furniture.items = action.payload
             state.furniture.status = 'loaded'
-        },
-        [fetchFurniture.error]: (state) => {
-            state.furniture.items = []
-            state.furniture.status = 'error'
-        }
+        })
     }
 })
 

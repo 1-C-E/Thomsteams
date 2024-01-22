@@ -47,8 +47,7 @@ const initialState = {
     name: null,
     favorites: [],
     loginToken: null,
-    status: 'loading',
-    errorMessage: ''
+    status: 'loading'
 }
 
 

@@ -5,13 +5,15 @@ import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, Scro
 import styled from 'styled-components';
 import { FurnitureBox } from '../componenets/FlexCont';
 import { fetchFurniture } from '../redux/slices/furniture';
+import { Header_1 } from '../componenets/Header_1'
+import { fetchFavoriteFurniture } from '../redux/slices/favoriteFurniture';
 
 export default function Main_page({navigation}) {
   
     const dbTest = true
     const dispatch = useDispatch()
     const furniture = useSelector((state) => state.furniture.furniture)
-
+    
     const isFurnitureLoading = furniture.status == 'loading'
 
     React.useEffect(() => {
