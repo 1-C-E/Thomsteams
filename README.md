@@ -23,6 +23,10 @@ Files description:
 
 - video_2.mp4 - interior generation
 
+- Startup.pdf - presentation about a startup
+
+- Team.pdf - presentation about the team
+
 --------------------------------------------------------------------------------------
 
 Figma:
