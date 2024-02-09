@@ -18,19 +18,16 @@ const favoriteFurnitureSlice = createSlice({
     name: 'favoriteFurniture',
     initialState,
     reducers: {},
-    extraReducers: {
-        [fetchFavoriteFurniture.pending]: (state) => {
+    extraReducers: (builder)=> {
+        builder
+        .addCase(fetchFavoriteFurniture.pending, (state) =>{
             state.favoriteFurniture.items = []
             state.favoriteFurniture.status = 'loading'
-        },
-        [fetchFavoriteFurniture.fulfilled]: (state, action) => {
+        })
+        .addCase(fetchFavoriteFurniture.fulfilled, (state, action) =>{
             state.favoriteFurniture.items = action.payload
             state.favoriteFurniture.status = 'loaded'
-        },
-        [fetchFavoriteFurniture.error]: (state) => {
-            state.favoriteFurniture.items = []
-            state.favoriteFurniture.status = 'error'
-        }
+        })
     }
 })
 

@@ -29,6 +29,7 @@ const furnitureSlice = createSlice({
             state.furniture.items = action.payload
             state.furniture.status = 'loaded'
         })
+
     }
 })
 

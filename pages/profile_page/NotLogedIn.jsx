@@ -44,6 +44,7 @@ export const NotLogedIn = ({navigation}) => {
 const Welcome = styled.Text`
     font-size: 20px;
     font-weight: 600;
+    color: black;
 `;
 
 const Buttons = styled.View`

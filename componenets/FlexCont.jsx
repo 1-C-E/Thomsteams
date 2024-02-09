@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
-import Navigation from "../navigate";
+
 import { url } from '../dbUrl';
 
 const FlexContView = styled.View`
@@ -9,6 +9,7 @@ const FlexContView = styled.View`
   border-radius: 14px;
   border: 1.5px #B6D3FF;
   background: #FFF;
+  margin-top: 10px;
 `;
 const Price = styled.Text`
   color: black;
@@ -18,6 +19,7 @@ const Price = styled.Text`
 const Name = styled.Text`
   font-size: 13px;
   font-weight: 500;
+  color: black;
 `;
 const styles = StyleSheet.create({
     furniture: {
@@ -40,7 +42,7 @@ export const FurnitureBox = ({name, price, imgsrc, navigation, furnitureId, desc
           additionalImages: additionalImages
         })}
                         style={{padding: 5}}>
-            <Image source={imgsrc == "1" ? '' : {uri: url + "/uploads/" + imgsrc}}
+            <Image source={imgsrc == "1" ? '' : {uri: url + "/uploads/" + furnitureId + "/"  + imgsrc}}
                 style={styles.furniture}/>
             <Name> {name} </Name>
             <Price> {price} </Price>

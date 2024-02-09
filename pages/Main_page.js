@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
 import { FurnitureBox } from '../componenets/FlexCont';
 import { fetchFurniture } from '../redux/slices/furniture';
-import { Header_1 } from '../componenets/Header_1'
+import { Header_1 } from '../componenets/Header'
 import { fetchFavoriteFurniture } from '../redux/slices/favoriteFurniture';
+
 
 export default function Main_page({navigation}) {
   
@@ -24,13 +24,13 @@ export default function Main_page({navigation}) {
 
     return (
         <SafeAreaView>
-            <StatusBar></StatusBar>
+
             <ScrollView>
 
                 <ImageBackground source={require('../assets/img-main-page/gradient_2.png')}
                                  style={{paddingHorizontal: 6}}
                                  imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
-                    <Header_1 />
+                    <Header_1 theme = {false} />
                     <Input type="text" placeholder="Введите запрос"/>
 
                     <Articles_block>

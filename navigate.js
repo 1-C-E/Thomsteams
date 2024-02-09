@@ -8,7 +8,8 @@ import Article_page_3 from "./pages/article_pages/Article_page_3";
 import Product_page from "./pages/product_pages/Product_page";
 import Basket_page from "./pages/Basket_page";
 import Favorites_page from "./pages/Favorites_page";
-import Camera_1 from "./componenets/Camera";
+import AR_Scene from "./componenets/Viro_1";
+
 import LogIn from "./pages/profile_page/LogIn";
 import SignIn from "./pages/profile_page/SignIn";
 import Profile from "./pages/profile_page/Profile";
@@ -26,10 +27,6 @@ export function First_Product_page(){
             <Stack.Screen
                 name="Product_page"
                 component={Product_page}
-                options={{headerShown: false}}/>
-            <Stack.Screen
-                name="Camera"
-                component={Camera_1}
                 options={{headerShown: false}}/>
 
             <Stack.Screen
@@ -55,6 +52,11 @@ export function First_Product_page(){
             <Stack.Screen
                 name="Favorites_page"
                 component={Favorites_page}
+                options={{headerShown: false}}/>
+
+            <Stack.Screen
+                name="AR_Scene"
+                component={AR_Scene}
                 options={{headerShown: false}}/>
 
         </Stack.Navigator>

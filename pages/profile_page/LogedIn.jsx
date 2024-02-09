@@ -1,7 +1,7 @@
 import React from "react";
 import {Image, ImageBackground, TouchableOpacity, View, ScrollView, Text, StyleSheet, Alert} from "react-native";
 import styled from 'styled-components';
-import Header from "../../componenets/Header_2";
+import { Header_1 } from '../../componenets/Header'
 import { useSelector } from "react-redux";
 
 export const Logedin = () => {
@@ -10,7 +10,7 @@ export const Logedin = () => {
     console.log(user)
     return (
         <View style={{backgroundColor: 'white'}}>
-            <Header/>
+            <Header_1 theme = {true} />
             <ScrollView>
                 <Center>
 

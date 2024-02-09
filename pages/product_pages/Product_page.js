@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, Image, ImageBackground, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
 import styled from 'styled-components'
-import Header_2 from "../../componenets/Header_2";
+import { Header_1 } from '../../componenets/Header'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFurnitureExtra } from "../../redux/slices/furnitureExtra";
 import { url } from "../../dbUrl";
@@ -42,11 +42,11 @@ export default function Product_page({navigation, route}) {
 
     return (
         <View>
-            <Header_2/>
+            <Header_1 theme={true}/>
             <ScrollView>
               <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={true} style={{width}}>
                 <Image 
-                  src={url + "/uploads/" + imageUrl}
+                  src={url + "/uploads/" + furnitureId + "/"  + imageUrl}
                   style={{width, height}}
                   imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}
                   key = {1}
@@ -54,7 +54,7 @@ export default function Product_page({navigation, route}) {
                 {
                   additionalImages.map((u, i) => (
                     <Image 
-                      src={url + "/uploads/" + u}
+                      src={url + "/uploads/" + furnitureId + "/"  + u}
                       style={{width, height}}
                       imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}
                       key = {i+1}
@@ -80,7 +80,7 @@ export default function Product_page({navigation, route}) {
                     </Feedback_block>
 
                     <View>
-                        <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("AR_Scene")}>
 
                             <Camera>
                                 <Image source={require('../../assets/img-product-pages/camera.png')}
@@ -90,7 +90,6 @@ export default function Product_page({navigation, route}) {
 
                         </TouchableOpacity>
                     </View>
-
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
                             <Price> {price} </Price>
