@@ -20,8 +20,6 @@ export default function Main_page({navigation}) {
       dispatch(fetchFurniture())
     }, [])
 
-    console.log(furniture.items.map((obj, index) => console.log(obj)))
-
     return (
         <SafeAreaView>
 
@@ -64,8 +62,6 @@ export default function Main_page({navigation}) {
                       imgsrc = {obj.imageUrl}
                       navigation={navigation}
                       furnitureId={obj._id}
-                      description={obj.description}
-                      additionalImages={obj.additionalImages}
                       />
                     )
                   )) : (<FurnitureBox name = "Стол компьютерный УНО-75 белый" imgsrc = {require("../assets/img-main-page/computer_table.png")} price = "7 599₽" navigation={navigation} navigation_page="Product_page_1" />)

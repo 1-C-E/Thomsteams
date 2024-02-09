@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 
 import { url } from '../dbUrl';
+import { useDispatch } from 'react-redux';
+import { fetchSelectedFurniture } from '../redux/slices/selectedFurniture';
 
 const FlexContView = styled.View`
   width: 150px;
@@ -31,16 +33,13 @@ const styles = StyleSheet.create({
 
 export const FurnitureBox = ({name, price, imgsrc, navigation, furnitureId, description, additionalImages}) =>
 {
+    const dispatch = useDispatch()
     return(
     <FlexContView>
-        <TouchableOpacity onPress={() => navigation.navigate("Product_page", {
-          furnitureId: furnitureId,
-          name: name,
-          price: price,
-          imageUrl: imgsrc,
-          description: description,
-          additionalImages: additionalImages
-        })}
+        <TouchableOpacity onPress={() => {
+          navigation.navigate("Product_page", {furnitureId: furnitureId})
+          dispatch(fetchSelectedFurniture(furnitureId))
+        }}
                         style={{padding: 5}}>
             <Image source={imgsrc == "1" ? '' : {uri: url + "/uploads/" + furnitureId + "/"  + imgsrc}}
                 style={styles.furniture}/>

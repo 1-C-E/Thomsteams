@@ -7,24 +7,26 @@ import { fetchFurnitureExtra } from "../../redux/slices/furnitureExtra";
 import { url } from "../../dbUrl";
 import { accountStatus, fetchAccountUpdate } from "../../redux/slices/account";
 import axios from "axios";
+import { fetchSelectedFurniture } from "../../redux/slices/selectedFurniture";
 
 const {width} = Dimensions.get("window")
 const height = width * 100 / 100
 
 export default function Product_page({navigation, route}) {
     
-    const { name, price, furnitureId, imageUrl, description, additionalImages } = route.params
+    const {furnitureId} = route.params
 
     var allFavorites = []
+    var basketItems = []
     var acID = null
     const dispatch = useDispatch()
     const isAuth = useSelector(accountStatus) == "loaded"
     const furnitureExtra = useSelector((state) => state.furnitureExtra.furnitureExtra)
-
-    const isFurnitureLoading = furnitureExtra.status == 'loading'
-
+    const curFurniture = useSelector((state) => state.selectedFurniture.items)
+    const isFurnitureLoaded = useSelector((state) => state.selectedFurniture.status)
     allFavorites = useSelector((state) => state.account.favorites)
     isInFavorites = allFavorites.includes(furnitureId)
+    basketItems = useSelector((state) => state.account.basket)
     acID = useSelector((state) => state.account.accountID)
     loginToken = useSelector((state) => state.account.loginToken)
     const updateFavorites = () => {
@@ -35,6 +37,14 @@ export default function Product_page({navigation, route}) {
         dispatch(fetchAccountUpdate([acID, {favorites: allFavorites}, loginToken]))
       }
     }
+    const updateBasket = () => {
+      if(acID != null && basketItems != null)
+      {
+        basketItems = basketItems.slice()
+        basketItems.push(furnitureId)
+        dispatch(fetchAccountUpdate([acID, {basket: basketItems}, loginToken]))
+      }
+    }
 
     /*React.useEffect(() => {
       dispatch(fetchFurnitureExtra(furnitureId))
@@ -42,19 +52,22 @@ export default function Product_page({navigation, route}) {
 
     return (
         <View>
-            <Header_1 theme={true}/>
+          <Header_1 theme={true}/>
+          {
+            curFurniture != null ?
+            
             <ScrollView>
               <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={true} style={{width}}>
                 <Image 
-                  src={url + "/uploads/" + furnitureId + "/"  + imageUrl}
+                  src={url + "/uploads/" + curFurniture._id + "/"  + curFurniture.imageUrl}
                   style={{width, height}}
                   imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}
                   key = {1}
                 />
                 {
-                  additionalImages.map((u, i) => (
+                  curFurniture.additionalImages.map((u, i) => (
                     <Image 
-                      src={url + "/uploads/" + furnitureId + "/"  + u}
+                      src={url + "/uploads/" + curFurniture._id + "/"  + u}
                       style={{width, height}}
                       imageStyle={{borderBottomLeftRadius: 10, borderBottomRightRadius: 10}}
                       key = {i+1}
@@ -64,7 +77,7 @@ export default function Product_page({navigation, route}) {
               </ScrollView>
             
                 <Product_information>
-                    <Product_name> {name} 
+                    <Product_name> {curFurniture.name} 
                     </Product_name>
 
                     <Feedback_block>
@@ -92,20 +105,25 @@ export default function Product_page({navigation, route}) {
                     </View>
                     <Offer_block>
                         <View style={{flexDirection: 'row'}}>
-                            <Price> {price} </Price>
+                            <Price> {curFurniture.price + "₽"} </Price>
                             <Devilery> Доставим 4 декабря </Devilery>
                         </View>
+                        {
+                          isAuth ?  <TouchableOpacity style={{marginTop: 10}} onPress={() => {
+                            updateBasket()
+                          }}>
 
-                        <TouchableOpacity style={{marginTop: 10}}>
+                          <ImageBackground source={require('../../assets/img-product-pages/place_an_order.png')}
+                                           imageStyle={{borderRadius: 10, height: 40}}>
 
-                            <ImageBackground source={require('../../assets/img-product-pages/place_an_order.png')}
-                                             imageStyle={{borderRadius: 10, height: 40}}>
+                                  <Place_an_order> Добавить в корзину </Place_an_order>
 
-                                <Place_an_order> Оформить заказ </Place_an_order>
+                              </ImageBackground>
 
-                            </ImageBackground>
-
-                        </TouchableOpacity>
+                          </TouchableOpacity>
+                          : null
+                        }
+                       
                         {
                           isAuth ? <TouchableOpacity style={{marginTop: 10}} onPress = {() => {
                             updateFavorites()
@@ -132,13 +150,15 @@ export default function Product_page({navigation, route}) {
                         <Text style={{fontSize: 22, fontWeight: 600}}> Описание </Text>
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
-                      <Text style={{marginTop: 16, height: 'auto'}}>{description}</Text>
+                      <Text style={{marginTop: 16, height: 'auto'}}>{curFurniture.description}</Text>
 
                     
                 </Product_information>
             </ScrollView>
+            : null
+          } 
         </View>
-    );
+    )
 }
 
 const Product_information = styled.View`

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchFavoriteFurniture } from "../redux/slices/favoriteFurniture";
 import axios from "axios";
 import { url } from "../dbUrl";
+import { fetchBasket } from "../redux/slices/basket";
 export const Header_1 = ({theme}) => {
       return (
         <View style = {{width: 'auto', height: 100}}>
@@ -22,12 +23,13 @@ function Header_dark(){
     const dispatch = useDispatch()
     const acID = useSelector((state) => state.account.accountID)
     const getFavorites = async () => {
-      const isAuth = acID != null ? true : false
-      if(isAuth)
-      {
-          navigation.navigate("Favorites_page")
-          dispatch(fetchFavoriteFurniture(acID))
-      }
+    const isAuth = acID != null ? true : false
+    if(isAuth)
+    {
+        navigation.navigate("Favorites_page")
+        dispatch(fetchFavoriteFurniture(acID))
+        dispatch(fetchBasket(acID))
+    }
     }
   return(
     <Head style={{marginTop:30}}>
@@ -63,6 +65,7 @@ function Header_light(){
       {
           navigation.navigate("Favorites_page")
           dispatch(fetchFavoriteFurniture(acID))
+          dispatch(fetchBasket(acID))
       }
     }
   return(

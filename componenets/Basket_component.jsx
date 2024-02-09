@@ -2,24 +2,23 @@ import React from "react";
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView, View, Text} from 'react-native';
 import styled from "styled-components";
 import {url} from "../dbUrl"
+import { useDispatch } from "react-redux";
+import { fetchSelectedFurniture } from "../redux/slices/selectedFurniture";
 
-export const Basket_component = ({name, price, imgsrc, navigation, furnitureId, description, additionalImages}) => {
+export const Basket_component = ({name, price, imgsrc, navigation, furnitureId, count}) => {
+    const dispatch = useDispatch()
     return (
       <View>
         <Block>
-          <TouchableOpacity onPress={() => navigation.navigate("Product_page", {
-            furnitureId: furnitureId,
-            name: name,
-            price: price,
-            imageUrl: imgsrc,
-            description: description,
-            additionalImages: additionalImages
-          })}>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate("Product_page", {furnitureId: furnitureId})
+            dispatch(fetchSelectedFurniture(furnitureId))
+          }}>
             <Info>
               <Img source={imgsrc == "1" ? '' : {uri: url + "/uploads/" + furnitureId + "/"  + imgsrc}}/>
               <View>
-                <Name> "Стол компьютерный УНО-75 белый" </Name>
-                <Price> {price}  </Price>
+                <Name> {name} </Name>
+                <Price> {price + "₽"}  </Price>
               </View>
             </Info>
           </TouchableOpacity>
@@ -32,14 +31,14 @@ export const Basket_component = ({name, price, imgsrc, navigation, furnitureId, 
 
 const Block = styled.View`
   height: 100px;
-  width: 350px;
+  width: auto;
   margin-top: 5px;
   padding: 12px;
   border: 1px #A4A4A4;
   border-radius: 20px;
   background-color: #ffffff;
-  margin-left: 5px
-
+  margin-left: 5px;
+  margin-right: 5px;
 `
 
 const Price = styled.Text`

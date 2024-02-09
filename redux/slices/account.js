@@ -46,6 +46,7 @@ const initialState = {
     phone: null,
     name: null,
     favorites: [],
+    basket: [],
     loginToken: null,
     status: 'loading',
     errorMessage: ''
@@ -74,6 +75,7 @@ const accountSlice = createSlice({
             state.name = action.payload.name
             state.favorites = action.payload.favorites
             state.loginToken = action.payload.token
+            state.basket = action.payload.basket
             state.status = 'loaded'
         })
 
@@ -84,6 +86,7 @@ const accountSlice = createSlice({
             state.phone = null
             state.name = null
             state.favorites = []
+            state.basket = []
             state.loginToken = null
             state.status = 'loading'
         })
@@ -94,6 +97,7 @@ const accountSlice = createSlice({
             state.name = action.payload.name
             state.favorites = action.payload.favorites
             state.loginToken = action.payload.token
+            state.basket = action.payload.basket
             state.status = 'loaded'
         })
         .addCase(fetchAccountLogin.rejected, (state) =>{
@@ -106,6 +110,7 @@ const accountSlice = createSlice({
             state.phone = action.payload.phone
             state.name = action.payload.name
             state.favorites = action.payload.favorites
+            state.basket = action.payload.basket
         })
 
 

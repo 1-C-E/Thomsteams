@@ -8,17 +8,12 @@ import { fetchFurniture } from '../redux/slices/furniture';
 
 export default function Basket_page({navigation}) {
     
-    const dbTest = true
-    const dispatch = useDispatch()
     const furniture = useSelector((state) => state.furniture.furniture)
     const isFurnitureLoading = furniture.status == 'loading'
 
-    React.useEffect(() => {
-      dispatch(fetchFurniture())
-    }, [])
-
-    console.log(furniture.items.map((obj, index) => console.log(obj)))
-    
+    const basketData = useSelector((state) => state.basket.basket.items)
+    const dataStatus = useSelector((state) => state.basket.basket.status)
+    const isDataLoaded = dataStatus == "loaded"
 
     return (
       <ScrollView>
@@ -31,28 +26,27 @@ export default function Basket_page({navigation}) {
                              >
                 <Head>
                     <Text style={{textAlign: 'center', marginTop: 20, fontSize: 28, fontWeight: 600, color: 'black'}}> Корзина </Text>
-                    <Text style={{textAlign: 'center', marginTop: 20, fontSize: 28, fontWeight: 600, color: 'black'}}> {furniture.length + " Товаров"}</Text>
+                    <Text style={{textAlign: 'center', marginTop: 20, fontSize: 28, fontWeight: 600, color: 'black'}}> {
+                        basketData.length == 1 ? basketData.length + " Товар"
+                        : (basketData.length == 2 || basketData.length == 3 || basketData.length == 4 ? basketData.length + " Товара"
+                        : basketData.length + " Товаров")
+                        }</Text>
                 </Head>
 
-             
-
-
             {
-                  dbTest ? (isFurnitureLoading ? null : furniture.items.map((obj, index) =>
+                  isDataLoaded ? basketData.map((obj, index) =>
                     (
                       <Basket_component
-                        key = {obj._id}
-                        name = {obj.name}
-                        price = {obj.price + "₽"}
-                        imgsrc = {obj.imageUrl}
-                        navigation={navigation}
+                        key={obj._id}
+                        count={obj.count}
+                        imgsrc={obj.imageUrl}
+                        name={obj.name}
+                        price={obj.price}
                         furnitureId={obj._id}
-                        description={obj.description}
-                        additionalImages={obj.additionalImages}>
-                          
+                        navigation={navigation}>
                       </Basket_component>
                     )
-                  )) : (<Block name = "Стол компьютерный УНО-75 белый" imgsrc = {require("../assets/img-main-page/computer_table.png")} price = "7 599₽" navigation={navigation} navigation_page="Product_page_1" />)
+                  ) : null
                 }
 
               </ImageBackground>
