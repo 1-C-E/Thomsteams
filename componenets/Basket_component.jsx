@@ -1,9 +1,9 @@
 import React from "react";
-import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView, View, Text} from 'react-native';
+import { TouchableOpacity, View} from 'react-native';
 import styled from "styled-components";
 import {url} from "../dbUrl"
-import { useDispatch } from "react-redux";
 import { fetchSelectedFurniture } from "../redux/slices/selectedFurniture";
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Basket_component = ({name, price, imgsrc, navigation, furnitureId, count}) => {
     const dispatch = useDispatch()
@@ -20,6 +20,7 @@ export const Basket_component = ({name, price, imgsrc, navigation, furnitureId, 
                 <Name> {name} </Name>
                 <Price> {price + "₽"}  </Price>
               </View>
+              <Numerous> {"Количество товара: " + count} </Numerous>
             </Info>
           </TouchableOpacity>
         </Block>
@@ -59,10 +60,28 @@ const Img = styled.Image`
   height: 80px;
   width: 80px;
   border-radius: 10px;
+  margin-bottom: 10px;
 `;
 
 const Info = styled.View`
   flex-direction: row;
   margin-bottom: 10px; 
   flex-wrap: wrap;
+`;
+
+const Numerous = styled.Text`
+  color: black;
+  text-align: right;
+  margin-top: 52px;
+  font-weight: 600;
+  font-size: 14px;
+`;
+
+
+const Plus = styled.View`
+  
+
+`;
+
+const Minus = styled.View`
 `;

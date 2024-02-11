@@ -98,7 +98,7 @@ export default function Product_page({navigation, route}) {
                             <Camera>
                                 <Image source={require('../../assets/img-product-pages/camera.png')}
                                        style={{width: 30, height: 30, marginLeft: 'auto'}}/>
-                                <Text style={{fontSize: 22, fontWeight: 500, marginRight: 'auto'}}> Опробовать </Text>
+                                <Text style={{fontSize: 22, fontWeight: 500, marginRight: 'auto', color: "black"}}> Опробовать </Text>
                             </Camera>
 
                         </TouchableOpacity>
@@ -125,7 +125,7 @@ export default function Product_page({navigation, route}) {
                         }
                        
                         {
-                          isAuth ? <TouchableOpacity style={{marginTop: 10}} onPress = {() => {
+                          isAuth ? <TouchableOpacity style={{marginTop: 20}} onPress = {() => {
                             updateFavorites()
                           }}>
 
@@ -147,7 +147,7 @@ export default function Product_page({navigation, route}) {
                     </Offer_block>
 
                     <View style={{flexDirection: 'row', marginTop: 12}}>
-                        <Text style={{fontSize: 22, fontWeight: 600}}> Описание </Text>
+                        <Text style={{fontSize: 22, fontWeight: 600, color:"black"}}> Описание </Text>
                         <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
                     </View>
                       <Text style={{marginTop: 16, height: 'auto'}}>{curFurniture.description}</Text>
@@ -177,6 +177,7 @@ const Stars = styled.View`
 const Product_name = styled.Text`
   font-size: 21px;
   font-weight: 600;
+  color: black;
 `;
 
 const Reviews = styled.Text`
@@ -184,6 +185,7 @@ const Reviews = styled.Text`
   font-size: 10px;
   font-weight: 800;
   margin: 0 0 0 7px;
+  color: black
 `;
 
 const Questions = styled.Text`
@@ -191,6 +193,7 @@ const Questions = styled.Text`
   font-size: 10px;
   font-weight: 800;
   margin: 0 0 0 117px;
+  color: black;
 `;
 
 const Offer_block = styled.View`
@@ -205,6 +208,7 @@ const Offer_block = styled.View`
 const Price = styled.Text`
   font-size: 25px;
   font-weight: 600;
+  color: black;
 `;
 
 const Devilery = styled.Text`
@@ -212,6 +216,7 @@ const Devilery = styled.Text`
   color: #A4A4A4;
   font-size: 10px;
   font-weight: 800;
+  color: black;
 `;
 
 const Place_an_order = styled.Text`
@@ -220,6 +225,7 @@ const Place_an_order = styled.Text`
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  
 `;
 
 const Camera = styled.View`

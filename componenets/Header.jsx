@@ -32,7 +32,7 @@ function Header_dark(){
     }
     }
   return(
-    <Head style={{marginTop:30}}>
+    <Head style={{marginTop:15}}>
     <Thoms> thoms </Thoms>
 
     <Navbar>
@@ -69,7 +69,7 @@ function Header_light(){
       }
     }
   return(
-    <Head style={{marginTop:30}}>
+    <Head style={{marginTop:15}}>
     <Thomsteams> thoms </Thomsteams>
 
     <Navbar>
