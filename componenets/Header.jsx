@@ -23,20 +23,28 @@ function Header_dark(){
     const dispatch = useDispatch()
     const acID = useSelector((state) => state.account.accountID)
     const getFavorites = async () => {
-    const isAuth = acID != null ? true : false
-    if(isAuth)
-    {
-        navigation.navigate("Favorites_page")
-        dispatch(fetchFavoriteFurniture(acID))
-        dispatch(fetchBasket(acID))
+      const isAuth = acID != null ? true : false
+      if(isAuth)
+      {
+          navigation.navigate("Favorites_page")
+          dispatch(fetchFavoriteFurniture(acID))
+          
+      }
     }
+    const getBasket = async () => {
+      const isAuth = acID != null ? true : false
+      if(isAuth)
+      {
+          navigation.navigate("Basket_page")
+          dispatch(fetchBasket(acID))
+      }
     }
   return(
     <Head style={{marginTop:15}}>
     <Thoms> thoms </Thoms>
 
     <Navbar>
-        <TouchableOpacity onPress={() => navigation.navigate("Basket_page")}
+        <TouchableOpacity onPress={() => getBasket()}
                           style={{marginLeft: 16}}>
             <Image source={require('../assets/img-upper-navbar/basket_black.png')}
                    style={{width: 21, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
@@ -68,12 +76,20 @@ function Header_light(){
           dispatch(fetchBasket(acID))
       }
     }
+    const getBasket = async () => {
+      const isAuth = acID != null ? true : false
+      if(isAuth)
+      {
+          navigation.navigate("Basket_page")
+          dispatch(fetchBasket(acID))
+      }
+    }
   return(
     <Head style={{marginTop:15}}>
     <Thomsteams> thoms </Thomsteams>
 
     <Navbar>
-        <TouchableOpacity onPress={() => navigation.navigate("Basket_page")}
+        <TouchableOpacity onPress={() => getBasket()}
                           style={{marginLeft: 16}}>
             <Image source={require('../assets/img-upper-navbar/basket_white.png')}
                    style={{width: 21, height: 21, marginLeft: 'auto', marginRight: 'auto'}}/>
