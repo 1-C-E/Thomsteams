@@ -25,7 +25,7 @@ export default function Create_Page_1() {
 
             <TouchableOpacity onPress={Alertpress}>
                 <Boxes_cool>
-                    <Nadpis> Нейросеть Thomsteams </Nadpis>
+                    <Nadpis> Попробовать в AR </Nadpis>
                 </Boxes_cool>
             </TouchableOpacity>
 
@@ -42,6 +42,7 @@ const Boxes = styled.View`
   background: #FFF;
   align-items: center;
   border-color: #17C8FF;
+  align-self: center;
 `;
 
 const Boxes_cool = styled.View`
@@ -53,6 +54,7 @@ const Boxes_cool = styled.View`
   background: #FFF;
   backdrop-filter: blur(12px);
   align-items: center;
+  align-self: center;
 `;
 
 const Nadpis = styled.Text`

@@ -8,6 +8,7 @@ import { url } from "../../dbUrl";
 import { accountStatus, fetchAccountUpdate } from "../../redux/slices/account";
 import axios from "axios";
 import { fetchSelectedFurniture } from "../../redux/slices/selectedFurniture";
+import { Viro3DObject, ViroAmbientLight, ViroScene } from "@viro-community/react-viro";
 
 const {width} = Dimensions.get("window")
 const height = width * 100 / 100
@@ -75,7 +76,6 @@ export default function Product_page({navigation, route}) {
                   ))
                 }
               </ScrollView>
-            
                 <Product_information>
                     <Product_name> {curFurniture.name} 
                     </Product_name>
@@ -93,7 +93,7 @@ export default function Product_page({navigation, route}) {
                     </Feedback_block>
 
                     <View>
-                        <TouchableOpacity onPress={() => navigation.navigate("AR_Scene")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("AR_Scene", {modelUrl: url + "/uploads/" + curFurniture._id + "/" + curFurniture.dModelUrl})}>
 
                             <Camera>
                                 <Image source={require('../../assets/img-product-pages/camera.png')}

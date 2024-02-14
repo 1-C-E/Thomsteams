@@ -73,7 +73,6 @@ function Header_light(){
       {
           navigation.navigate("Favorites_page")
           dispatch(fetchFavoriteFurniture(acID))
-          dispatch(fetchBasket(acID))
       }
     }
     const getBasket = async () => {
