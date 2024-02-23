@@ -159,7 +159,12 @@ export default function Product_page({navigation, route}) {
                        {status ? 
                         <Text style={{marginTop: 16, height: 'auto'}}>{curFurniture.description}</Text>
                         :
-                        <Text>Обама</Text>
+                        curFurniture.additionalInfo.map((element, index) => (
+                          <View key = {index}>
+                            <Text>{element.name}</Text>
+                            <Text>{element.value}</Text>
+                          </View>
+                        ))
                        } 
                 </Product_information>
             </ScrollView>
