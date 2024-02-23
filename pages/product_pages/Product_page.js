@@ -9,6 +9,7 @@ import { accountStatus, fetchAccountUpdate } from "../../redux/slices/account";
 import axios from "axios";
 import { fetchSelectedFurniture } from "../../redux/slices/selectedFurniture";
 import { Viro3DObject, ViroAmbientLight, ViroScene } from "@viro-community/react-viro";
+import { useState } from "react";
 
 const {width} = Dimensions.get("window")
 const height = width * 100 / 100
@@ -50,7 +51,7 @@ export default function Product_page({navigation, route}) {
     /*React.useEffect(() => {
       dispatch(fetchFurnitureExtra(furnitureId))
     }, [])*/
-
+    const [status, setStatus] = useState(true);
     return (
         <View>
           <Header_1 theme={true}/>
@@ -145,14 +146,21 @@ export default function Product_page({navigation, route}) {
                         }
                         
                     </Offer_block>
+                    
 
                     <View style={{flexDirection: 'row', marginTop: 12}}>
-                        <Text style={{fontSize: 22, fontWeight: 600, color:"black"}}> Описание </Text>
-                        <Text style={{fontSize: 22, fontWeight: 600, color: '#CCC'}}> Характеристики </Text>
+                      <TouchableOpacity onPress = {() => setStatus(true)}>
+                          <Text style={{fontSize: 22, fontWeight: 600, color: status ? "black" : '#CCC'}}> Описание </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress = {() => setStatus(false)}>
+                          <Text style={{fontSize: 22, fontWeight: 600, color: status ? '#CCC' : "black"}}> Характеристики </Text>
+                        </TouchableOpacity>
                     </View>
-                      <Text style={{marginTop: 16, height: 'auto'}}>{curFurniture.description}</Text>
-
-                    
+                       {status ? 
+                        <Text style={{marginTop: 16, height: 'auto'}}>{curFurniture.description}</Text>
+                        :
+                        <Text>Обама</Text>
+                       } 
                 </Product_information>
             </ScrollView>
             : null
