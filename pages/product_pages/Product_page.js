@@ -160,10 +160,10 @@ export default function Product_page({navigation, route}) {
                         <Text style={{marginTop: 16, height: 'auto'}}>{curFurniture.description}</Text>
                         :
                         curFurniture.additionalInfo.map((element, index) => (
-                          <View key = {index}>
-                            <Text>{element.name}</Text>
-                            <Text>{element.value}</Text>
-                          </View>
+                            <Opis key = {index}>
+                              <Text style = {{fontSize: 16}}>{element.name}</Text>
+                              <Text style = {{fontSize: 16}}>{element.value}</Text>
+                            </Opis>
                         ))
                        } 
                 </Product_information>
@@ -173,6 +173,16 @@ export default function Product_page({navigation, route}) {
         </View>
     )
 }
+const Opis = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const Podik = styled.View`
+  width: auto;
+  height: 1px;
+  border-color: gra
+`;
 
 const Product_information = styled.View`
   margin: 10px 20px 100px 20px;

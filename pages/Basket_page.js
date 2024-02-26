@@ -10,7 +10,7 @@ export default function Basket_page({navigation}) {
     const basketData = useSelector((state) => state.basket.basket.items)
     const dataStatus = useSelector((state) => state.basket.basket.status)
     const isDataLoaded = dataStatus == "loaded"
-
+    
     return (
       <ScrollView>
         <View>
