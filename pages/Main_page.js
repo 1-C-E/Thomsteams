@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
 import { FurnitureBox } from '../componenets/FlexCont';
-import { fetchFurniture } from '../redux/slices/furniture';
+import { fetchFurniture, fetchFurnitureSearch } from '../redux/slices/furniture';
 import { Header_1 } from '../componenets/Header'
 import { fetchFavoriteFurniture } from '../redux/slices/favoriteFurniture';
 
@@ -13,7 +13,7 @@ export default function Main_page({navigation}) {
     const dbTest = true
     const dispatch = useDispatch()
     const furniture = useSelector((state) => state.furniture.furniture)
-    
+
     const isFurnitureLoading = furniture.status == 'loading'
 
     React.useEffect(() => {
@@ -29,7 +29,9 @@ export default function Main_page({navigation}) {
                                  style={{paddingHorizontal: 6}}
                                  imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
                     <Header_1 theme = {false} />
-                    <Input type="text" placeholder="Введите запрос"/>
+                    <Input type="text" placeholder="Введите запрос" onChangeText = {(text) => {
+                      text == "" ? dispatch(fetchFurniture()) : dispatch(fetchFurnitureSearch({searchText: text}))
+                    }}/>
 
                     <Articles_block>
                         <TouchableOpacity onPress={() => navigation.navigate("Article_page_1")}>
