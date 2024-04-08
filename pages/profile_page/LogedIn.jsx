@@ -1,7 +1,7 @@
 import React from "react";
 import {Image, ImageBackground, TouchableOpacity, View, ScrollView, Text, StyleSheet, Alert} from "react-native";
 import styled from 'styled-components';
-import Header from "../../componenets/Header_2";
+import { Header_1 } from '../../componenets/Header'
 import { useSelector } from "react-redux";
 
 export const Logedin = () => {
@@ -10,7 +10,7 @@ export const Logedin = () => {
     console.log(user)
     return (
         <View style={{backgroundColor: 'white'}}>
-            <Header/>
+            <Header_1 theme = {true} />
             <ScrollView>
                 <Center>
 
@@ -71,7 +71,7 @@ export const Logedin = () => {
                     </Profile_block>
 
                     <Profile_block style={{marginTop: 10}}>
-                        <Text style={{fontWeight: 600}}> Ваши модели (интерьер, мебель) </Text>
+                        <Text style={{fontWeight: 600, color: "black"}}> Ваши модели (интерьер, мебель) </Text>
 
                         <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
 
@@ -137,6 +137,7 @@ const Prof_Text = styled.Text`
   text-align: center;
   font-size: 14px;
   font-weight: 600;
+  color: black;
 `;
 
 const Photo_1 = styled.View`
@@ -152,6 +153,7 @@ const Name = styled.Text`
   text-align: center;
   font-size: 24px;
   font-weight: 600;
+  color: black;
 `;
 
 const Profile_block = styled.View`
@@ -164,10 +166,12 @@ const Profile_block = styled.View`
 const Text_in_prof_block = styled.Text`
   font-size: 12px;
   font-weight: 600;
+  color:black;
 `;
 
 const To_change = styled.Text`
   margin-left: auto;
   font-size: 12px;
   font-weight: 500;
+  color:black;
 `;

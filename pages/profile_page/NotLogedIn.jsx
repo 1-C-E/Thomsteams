@@ -1,9 +1,11 @@
 import React from "react";
 import {ImageBackground, TouchableOpacity, Text} from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import styled from 'styled-components';
 
 export const NotLogedIn = ({navigation}) => {
     return (
+        <ScrollView>
         <Center>
                 <Welcome>Добро пожаловать,</Welcome>
                 <Welcome>рады вас видеть!</Welcome>
@@ -37,6 +39,7 @@ export const NotLogedIn = ({navigation}) => {
                             </TouchableOpacity>
                         </Buttons>
             </Center>
+            </ScrollView>
     );
 }
 
@@ -44,6 +47,7 @@ export const NotLogedIn = ({navigation}) => {
 const Welcome = styled.Text`
     font-size: 20px;
     font-weight: 600;
+    color: black;
 `;
 
 const Buttons = styled.View`

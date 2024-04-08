@@ -1,37 +1,37 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Image, SafeAreaView, TouchableOpacity, ImageBackground, ScrollView,} from 'react-native';
 import styled from 'styled-components';
 import { FurnitureBox } from '../componenets/FlexCont';
-import { fetchFurniture } from '../redux/slices/furniture';
-import { Header_1 } from '../componenets/Header_1'
+import { fetchFurniture, fetchFurnitureSearch } from '../redux/slices/furniture';
+import { Header_1 } from '../componenets/Header'
 import { fetchFavoriteFurniture } from '../redux/slices/favoriteFurniture';
+
 
 export default function Main_page({navigation}) {
   
     const dbTest = true
     const dispatch = useDispatch()
     const furniture = useSelector((state) => state.furniture.furniture)
-    
+
     const isFurnitureLoading = furniture.status == 'loading'
 
     React.useEffect(() => {
       dispatch(fetchFurniture())
     }, [])
 
-    console.log(furniture.items.map((obj, index) => console.log(obj)))
-
     return (
         <SafeAreaView>
-            <StatusBar></StatusBar>
+
             <ScrollView>
 
                 <ImageBackground source={require('../assets/img-main-page/gradient_2.png')}
                                  style={{paddingHorizontal: 6}}
                                  imageStyle={{borderBottomLeftRadius: 25, borderBottomRightRadius: 25}}>
-                    <Header_1 />
-                    <Input type="text" placeholder="Введите запрос"/>
+                    <Header_1 theme = {false} />
+                    <Input type="text" placeholder="Введите запрос" onChangeText = {(text) => {
+                      text == "" ? dispatch(fetchFurniture()) : dispatch(fetchFurnitureSearch({searchText: text}))
+                    }}/>
 
                     <Articles_block>
                         <TouchableOpacity onPress={() => navigation.navigate("Article_page_1")}>
@@ -64,8 +64,6 @@ export default function Main_page({navigation}) {
                       imgsrc = {obj.imageUrl}
                       navigation={navigation}
                       furnitureId={obj._id}
-                      description={obj.description}
-                      additionalImages={obj.additionalImages}
                       />
                     )
                   )) : (<FurnitureBox name = "Стол компьютерный УНО-75 белый" imgsrc = {require("../assets/img-main-page/computer_table.png")} price = "7 599₽" navigation={navigation} navigation_page="Product_page_1" />)

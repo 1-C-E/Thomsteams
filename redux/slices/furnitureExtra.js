@@ -24,19 +24,17 @@ const furnitureExtraSlice = createSlice({
     name: 'furnitureExtra',
     initialState,
     reducers: {},
-    extraReducers: {
-        [fetchFurnitureExtra.pending]: (state) => {
+    extraReducers: (builder)=>{
+        builder
+        .addCase(fetchFurnitureExtra.pending, (state) =>{
             state.furnitureExtra.items = []
             state.furnitureExtra.status = 'loading'
-        },
-        [fetchFurnitureExtra.fulfilled]: (state, action) => {
+        })
+        .addCase(fetchFurnitureExtra.fulfilled, (state, action) =>{
             state.furnitureExtra.items = action.payload
             state.furnitureExtra.status = 'loaded'
-        },
-        [fetchFurnitureExtra.error]: (state) => {
-            state.furnitureExtra.items = []
-            state.furnitureExtra.status = 'error'
-        },
+        })
+
     }
 })
 

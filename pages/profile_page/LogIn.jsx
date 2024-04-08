@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { accountStatus, fetchAccountLogin } from "../../redux/slices/account";
 import { Formik } from "formik";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function LogIn({navigation}){
     var isAuth = useSelector(accountStatus)
@@ -21,6 +22,7 @@ export default function LogIn({navigation}){
     console.log("account status: " + isAuth)
 
     return(
+        <ScrollView>
         <Formik
         initialValues={{email:'', password:''}}
         onSubmit={(values) => onSubmit(values)}
@@ -49,6 +51,7 @@ export default function LogIn({navigation}){
         </Center>
         )}
         </Formik>
+        </ScrollView>
     );
 
 }
@@ -74,4 +77,5 @@ const Center = styled.View`
 const Log_Text = styled.Text`
     font-size: 20px;
     font-weight: 600;
+    color: black
 `;

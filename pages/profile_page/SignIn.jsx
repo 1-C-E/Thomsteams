@@ -29,6 +29,7 @@ export default function SignIn({navigation}){
     }
 
     return(
+        <ScrollView>
         <Formik
         initialValues={{email:'', password:'', phone: '', name: ''}}
         onSubmit={(values) => onSubmit(values)}
@@ -61,6 +62,7 @@ export default function SignIn({navigation}){
         </Center>
         )}
         </Formik>
+        </ScrollView>
     );
 
 }
@@ -86,6 +88,7 @@ const Center = styled.View`
 const Log_Text = styled.Text`
     font-size: 20px;
     font-weight: 600;
+    color: black;
 `;
 
 const Validation_Text = styled.Text`

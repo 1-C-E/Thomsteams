@@ -46,8 +46,10 @@ const initialState = {
     phone: null,
     name: null,
     favorites: [],
+    basket: [],
     loginToken: null,
-    status: 'loading'
+    status: 'loading',
+    errorMessage: ''
 }
 
 
@@ -55,8 +57,9 @@ const accountSlice = createSlice({
     name: 'account',
     initialState,
     reducers: {},
-    extraReducers: {
-        [fetchAccountRegister.pending]: (state) => {
+    extraReducers: (builder) => {
+        builder
+        .addCase(fetchAccountRegister.pending, (state) =>{
             state.accountID = null
             state.email = null
             state.phone = null
@@ -64,56 +67,53 @@ const accountSlice = createSlice({
             state.favorites = []
             state.loginToken = null
             state.status = 'loading'
-        },
-        [fetchAccountRegister.fulfilled]: (state, action) => {
+        })
+        .addCase(fetchAccountRegister.fulfilled, (state, action) =>{
             state.accountID = action.payload._id
             state.email = action.payload.email
             state.phone = action.payload.phone
             state.name = action.payload.name
             state.favorites = action.payload.favorites
             state.loginToken = action.payload.token
+            state.basket = action.payload.basket
             state.status = 'loaded'
-        },
-        [fetchAccountRegister.error]: (state) => {
+        })
+
+        
+        .addCase(fetchAccountLogin.pending, (state) =>{
             state.accountID = null
             state.email = null
             state.phone = null
             state.name = null
             state.favorites = []
-            state.loginToken = null
-            state.status = 'error'
-        },
-        [fetchAccountLogin.pending]: (state) => {
-            state.accountID = null
-            state.email = null
-            state.phone = null
-            state.name = null
-            state.favorites = []
+            state.basket = []
             state.loginToken = null
             state.status = 'loading'
-        },
-        [fetchAccountLogin.fulfilled]: (state, action) => {
+        })
+        .addCase(fetchAccountLogin.fulfilled, (state, action) =>{
             state.accountID = action.payload._id
             state.email = action.payload.email
             state.phone = action.payload.phone
             state.name = action.payload.name
             state.favorites = action.payload.favorites
             state.loginToken = action.payload.token
+            state.basket = action.payload.basket
             state.status = 'loaded'
-        },
-        [fetchAccountLogin.rejected]: (state) => {
+        })
+        .addCase(fetchAccountLogin.rejected, (state) =>{
             state.status = 'rejected'
-        },
-        [fetchAccountLogin.error]: (state) => {
-            state.status = 'error'
-        },
-        [fetchAccountUpdate.fulfilled]: (state, action) => {
+        })
+
+        .addCase(fetchAccountUpdate.fulfilled, (state, action) =>{
             state.accountID = action.payload._id
             state.email = action.payload.email
             state.phone = action.payload.phone
             state.name = action.payload.name
             state.favorites = action.payload.favorites
-        }
+            state.basket = action.payload.basket
+        })
+
+
     }
 })
 

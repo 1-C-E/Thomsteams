@@ -1,15 +1,15 @@
 import React from "react";
 import {TouchableOpacity, View, Alert} from "react-native";
-import {StatusBar} from 'expo-status-bar';
 import styled from 'styled-components'
-import Header from "../componenets/Header_2";
+import { Header_1 } from '../componenets/Header'
+import { ViroScene, ViroText } from "@viro-community/react-viro";
 
-export default function Create_Page_1({navigation}) {
+export default function Create_Page_1() {
     const Alertpress = () => Alert.alert("Внимание!", 'Эта страница пока не доступна для запуска из приложения, мы покажем принцип работы из другого apk файла')
     return (
         <View>
-            <StatusBar></StatusBar>
-            <Header/>
+
+            <Header_1 theme = {true} />
 
             <TouchableOpacity onPress={Alertpress}>
                 <Boxes>
@@ -25,9 +25,10 @@ export default function Create_Page_1({navigation}) {
 
             <TouchableOpacity onPress={Alertpress}>
                 <Boxes_cool>
-                    <Nadpis> Нейросеть Thomsteams </Nadpis>
+                    <Nadpis> Попробовать в AR </Nadpis>
                 </Boxes_cool>
             </TouchableOpacity>
+
         </View>
     )
 }
@@ -41,6 +42,7 @@ const Boxes = styled.View`
   background: #FFF;
   align-items: center;
   border-color: #17C8FF;
+  align-self: center;
 `;
 
 const Boxes_cool = styled.View`
@@ -52,6 +54,7 @@ const Boxes_cool = styled.View`
   background: #FFF;
   backdrop-filter: blur(12px);
   align-items: center;
+  align-self: center;
 `;
 
 const Nadpis = styled.Text`
